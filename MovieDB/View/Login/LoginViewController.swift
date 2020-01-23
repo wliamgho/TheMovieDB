@@ -14,6 +14,12 @@ class LoginViewController: UIViewController {
 
   var viewModel = LoginViewModel()
 
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+
+    usernameTextField.text = ""
+  }
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -32,6 +38,11 @@ extension LoginViewController: LoginViewModelDelegate {
 
       self?.errorLabel.isHidden = status
       self?.errorLabel.text = status == true ? "" : "Username can't be empty"
+
+      if status == true {
+        self?.navigationController?.pushViewController(MovieListViewController(), animated: true)
+      }
+
     }
   }
 }
