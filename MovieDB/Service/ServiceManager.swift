@@ -24,18 +24,21 @@ class ServiceManager {
     self.session = session
   }
 
-  func load(path: String, queryItems: [String: String]? = [:], method: HTTPMethod,
+  func load(path: String, params: [String: String]? = [:], method: HTTPMethod,
             body: [String: Any]? = nil, completion: @escaping(Data?, ServiceError?) -> Void) {
-    guard let baseUrl = URL(string: "https://api.themoviedb.org/3/"),
-      let components = URLComponents(url: baseUrl, resolvingAgainstBaseURL: false),
-      var url = components.url else { return }
+    guard let baseUrl = URL(string: "https://api.themoviedb.org/3/\(path)"),
+      var components = URLComponents(url: baseUrl, resolvingAgainstBaseURL: false) else { return }
 
     // Append query items
-    if queryItems?.isEmpty == false,
-      let queryItem = url.appending(path, queryItems: queryItems ?? [:],
-                                    value: baseUrl.absoluteString) {
-      url = queryItem
+    var queryItems = [URLQueryItem(name: "api_key", value: "0340dd96e32f995c600b8deb3dffbfb4")]
+
+    if let params = params {
+      queryItems.append(contentsOf: params.map({ URLQueryItem(name: $0.key, value: $0.value)} ))
     }
+
+    components.queryItems = queryItems
+
+    guard let url = components.url else { return }
   
     var urlRequest = URLRequest(url: url)
     urlRequest.httpMethod = method.rawValue

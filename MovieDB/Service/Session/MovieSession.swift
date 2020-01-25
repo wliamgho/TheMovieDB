@@ -20,7 +20,7 @@ open class Movies {
                         completion: @escaping CompletionHandler) {
     let param: [String: String] = ["language": language, "page": page]
     
-    ServiceManager().load(path: movie.path, queryItems: param, method: .GET, body: nil) { (data, error) in
+    ServiceManager().load(path: movie.path, params: param, method: .GET, body: nil) { (data, error) in
       if let error = error {
         completion(.failure(error))
         return

@@ -8,8 +8,24 @@
 
 import UIKit
 
-class MovieListViewController: UIViewController {
+class MovieListViewController: UIViewController, MovieListDelegate {
+  @IBOutlet weak var collectionView: UICollectionView!
+
+  var viewModel: MovieListViewModel?
+
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    viewModel = MovieListViewModel(path: .nowPlaying)
+    viewModel?.delegate = self
+  }
+
+  func failedLoad(error: String) {
+    debugPrint("HERE ERROR")
+  }
+  
+  func successLoad(data: MovieModel) {
+    debugPrint("SUCCESS LOAD", data)
   }
 }
+
