@@ -10,10 +10,18 @@ import UIKit
 
 class MovieListViewController: UIViewController, MovieListDelegate {
   @IBOutlet weak var collectionView: UICollectionView!
-
+  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+  
   private var data: MovieModel?
 
   var viewModel: MovieListViewModel?
+
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+
+    activityIndicator.startAnimating()
+    activityIndicator.isHidden = false
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -26,10 +34,13 @@ class MovieListViewController: UIViewController, MovieListDelegate {
   }
 
   func failedLoad(error: String) {
-    
+    // Error actions
   }
 
   func successLoad(data: MovieModel) {
+    activityIndicator.stopAnimating()
+    activityIndicator.isHidden = true
+    
     self.data = data
 
     self.collectionView.reloadData()
@@ -46,16 +57,17 @@ extension MovieListViewController: UICollectionViewDelegate, UICollectionViewDat
       return UICollectionViewCell()
     }
 
-    cell.backgroundColor = .lightGray
+    let movies = self.data?.movies[indexPath.row]
+
+    cell.imageUrl = movies?.posterPath
     return cell
   }
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    let padding: CGFloat = 50
-
-    let collectionViewSize = collectionView.frame.size.width - padding
+    let collectionViewSize = collectionView.frame.width - 2
     
-    return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
+    return CGSize(width: collectionViewSize / 2 - 1 / 2,
+                  height: collectionViewSize / 2 + 80)
   }
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

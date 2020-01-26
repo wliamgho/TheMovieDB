@@ -40,7 +40,7 @@ extension LoginViewController: LoginViewModelDelegate {
       self?.errorLabel.text = status == true ? "" : "Username can't be empty"
 
       if status == true {
-        self?.navigationController?.pushViewController(MovieListViewController(), animated: true)
+        self?.navigationController?.setViewControllers([MovieListViewController()], animated: true)
       }
 
     }

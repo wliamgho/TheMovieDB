@@ -24,6 +24,7 @@
 		5EE4B58123D85AB900D1CF69 /* MovieListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EE4B57F23D85AB900D1CF69 /* MovieListViewController.xib */; };
 		5EE4B58423D85BBF00D1CF69 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE4B58323D85BBF00D1CF69 /* ServiceManager.swift */; };
 		5EE4B58623D85C3100D1CF69 /* ServiceSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE4B58523D85C3100D1CF69 /* ServiceSession.swift */; };
+		5EE7055423DDCA94004FCF11 /* ImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE7055323DDCA94004FCF11 /* ImageViewExtensions.swift */; };
 		5EFF708223D84F9500FF4925 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFF708023D84F9500FF4925 /* LoginViewController.swift */; };
 		5EFF708323D84F9500FF4925 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EFF708123D84F9500FF4925 /* LoginViewController.xib */; };
 		5EFF708623D852EC00FF4925 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFF708523D852EC00FF4925 /* LoginViewModel.swift */; };
@@ -50,6 +51,7 @@
 		5EE4B57F23D85AB900D1CF69 /* MovieListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieListViewController.xib; sourceTree = "<group>"; };
 		5EE4B58323D85BBF00D1CF69 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		5EE4B58523D85C3100D1CF69 /* ServiceSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSession.swift; sourceTree = "<group>"; };
+		5EE7055323DDCA94004FCF11 /* ImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtensions.swift; sourceTree = "<group>"; };
 		5EFF708023D84F9500FF4925 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5EFF708123D84F9500FF4925 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		5EFF708523D852EC00FF4925 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				5E82CBC223D98B22008B6081 /* CodableExtensions.swift */,
+				5EE7055323DDCA94004FCF11 /* ImageViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				5EFF708223D84F9500FF4925 /* LoginViewController.swift in Sources */,
 				5EABDA1923D7458E0035D450 /* AppDelegate.swift in Sources */,
 				5E1265B223D97DBD00C32FEA /* MoviePath.swift in Sources */,
+				5EE7055423DDCA94004FCF11 /* ImageViewExtensions.swift in Sources */,
 				5ED2971E23DCA58C00F624BB /* MovieItemCell.swift in Sources */,
 				5ED2971923DC9FEA00F624BB /* MovieListViewModel.swift in Sources */,
 				5E82CBC623D98B89008B6081 /* MovieModel.swift in Sources */,

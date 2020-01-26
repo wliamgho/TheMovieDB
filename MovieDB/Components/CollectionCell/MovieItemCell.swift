@@ -10,6 +10,14 @@ import UIKit
 
 class MovieItemCell: UICollectionViewCell {
 
+  @IBOutlet weak var imageView: UIImageView!
+
+  var imageUrl: String? {
+    didSet {
+      didSetMovieImage()
+    }
+  }
+
   static func reuseIdentifier() -> String {
     return String(describing: self)
   }
@@ -17,5 +25,16 @@ class MovieItemCell: UICollectionViewCell {
   override func awakeFromNib() {
     super.awakeFromNib()
     // Initialization code
+
+    imageView.backgroundColor = .lightGray
+  }
+
+  private func didSetMovieImage() {
+    guard let imageUrl = imageUrl else { return }
+
+    let url = URL(string: imageUrl)
+
+    imageView.backgroundColor = .clear
+    imageView.loadImage(url: url)
   }
 }
