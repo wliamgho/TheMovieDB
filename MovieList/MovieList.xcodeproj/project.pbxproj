@@ -15,8 +15,6 @@
 		5E2C695423DEE6EE009E3223 /* ModuleManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E2C695323DEE6EE009E3223 /* ModuleManager.framework */; };
 		5E2C695B23DEE911009E3223 /* MovieListModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2C695A23DEE911009E3223 /* MovieListModule.swift */; };
 		5E2C695E23DEEA78009E3223 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2C695D23DEEA78009E3223 /* MovieModel.swift */; };
-		5E2C696623DEEABA009E3223 /* DropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2C696123DEEABA009E3223 /* DropDownView.swift */; };
-		5E2C696723DEEABA009E3223 /* DropDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2C696223DEEABA009E3223 /* DropDownButton.swift */; };
 		5E2C696823DEEABA009E3223 /* MovieItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2C696423DEEABA009E3223 /* MovieItemCell.swift */; };
 		5E2C696923DEEABA009E3223 /* MovieItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E2C696523DEEABA009E3223 /* MovieItemCell.xib */; };
 		5E2C696C23DEEAE2009E3223 /* ImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2C696B23DEEAE2009E3223 /* ImageViewExtensions.swift */; };
@@ -33,8 +31,6 @@
 		5E2C695323DEE6EE009E3223 /* ModuleManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ModuleManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E2C695A23DEE911009E3223 /* MovieListModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListModule.swift; sourceTree = "<group>"; };
 		5E2C695D23DEEA78009E3223 /* MovieModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
-		5E2C696123DEEABA009E3223 /* DropDownView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownView.swift; sourceTree = "<group>"; };
-		5E2C696223DEEABA009E3223 /* DropDownButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownButton.swift; sourceTree = "<group>"; };
 		5E2C696423DEEABA009E3223 /* MovieItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieItemCell.swift; sourceTree = "<group>"; };
 		5E2C696523DEEABA009E3223 /* MovieItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieItemCell.xib; sourceTree = "<group>"; };
 		5E2C696B23DEEAE2009E3223 /* ImageViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewExtensions.swift; sourceTree = "<group>"; };
@@ -130,19 +126,9 @@
 		5E2C695F23DEEABA009E3223 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				5E2C696023DEEABA009E3223 /* DropDown */,
 				5E2C696323DEEABA009E3223 /* CollectionCell */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		5E2C696023DEEABA009E3223 /* DropDown */ = {
-			isa = PBXGroup;
-			children = (
-				5E2C696123DEEABA009E3223 /* DropDownView.swift */,
-				5E2C696223DEEABA009E3223 /* DropDownButton.swift */,
-			);
-			path = DropDown;
 			sourceTree = "<group>";
 		};
 		5E2C696323DEEABA009E3223 /* CollectionCell */ = {
@@ -242,10 +228,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E2C696723DEEABA009E3223 /* DropDownButton.swift in Sources */,
 				5E2C695E23DEEA78009E3223 /* MovieModel.swift in Sources */,
 				5E2C696C23DEEAE2009E3223 /* ImageViewExtensions.swift in Sources */,
-				5E2C696623DEEABA009E3223 /* DropDownView.swift in Sources */,
 				5E2C694923DEE60A009E3223 /* MovieListViewModel.swift in Sources */,
 				5E2C694A23DEE60A009E3223 /* MovieListViewController.swift in Sources */,
 				5E2C696823DEEABA009E3223 /* MovieItemCell.swift in Sources */,

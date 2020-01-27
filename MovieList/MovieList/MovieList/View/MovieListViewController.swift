@@ -11,17 +11,13 @@ import UIKit
 class MovieListViewController: UIViewController, MovieListDelegate {
   @IBOutlet weak var collectionView: UICollectionView!
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-  var dropMenuItem: UIBarButtonItem!
 
   private var data: MovieModel?
 
   var viewModel: MovieListViewModel?
-  private var dropDownButton: DropDownButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    setDropDownMenu()
 
     viewModel = MovieListViewModel(path: .nowPlaying)
     viewModel?.delegate = self
@@ -29,21 +25,6 @@ class MovieListViewController: UIViewController, MovieListDelegate {
     let nib = Bundle(for: MovieItemCell.self)
     collectionView.register(UINib(nibName: MovieItemCell.reuseIdentifier(), bundle: nib),
                             forCellWithReuseIdentifier: MovieItemCell.reuseIdentifier())
-  }
-
-  private func setDropDownMenu() {
-    dropDownButton = DropDownButton(type: .system)
-    dropDownButton.frame = CGRect.zero
-    dropDownButton.setTitleColor(.blue, for: .normal)
-    dropDownButton.setTitle("Layout", for: .normal)
-    dropDownButton.clipsToBounds = true
-    dropDownButton.translatesAutoresizingMaskIntoConstraints = false
-
-    dropDownButton.dropView.options = ["List", "Columns"]
-
-    dropMenuItem = UIBarButtonItem(customView: dropDownButton)
-//    self.navigationItem.rightBarButtonItem = dropMenuItem
-    self.navigationItem.setRightBarButton(dropMenuItem, animated: true)
   }
 
   // Delegate method
