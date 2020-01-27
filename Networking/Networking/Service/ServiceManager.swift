@@ -19,6 +19,7 @@ public typealias CompletionHandler = (Result<[String: Any], ServiceError>) -> Vo
 class ServiceManager {
   private let session: ServiceSession
   private static var header = ["Content-Type": "application/json"]
+  private var apiKey = "XXX"
 
   init(session: ServiceSession = URLSession.shared) {
     self.session = session
@@ -30,7 +31,7 @@ class ServiceManager {
       var components = URLComponents(url: baseUrl, resolvingAgainstBaseURL: false) else { return }
 
     // Append query items
-    var queryItems = [URLQueryItem(name: "api_key", value: "0340dd96e32f995c600b8deb3dffbfb4")]
+    var queryItems = [URLQueryItem(name: "api_key", value: apiKey)]
 
     if let params = params {
       queryItems.append(contentsOf: params.map({ URLQueryItem(name: $0.key, value: $0.value)} ))
