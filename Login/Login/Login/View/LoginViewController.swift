@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import ModuleManager
+import MovieList
 
 class LoginViewController: UIViewController {
   @IBOutlet weak var usernameTextField: UITextField!
@@ -18,6 +20,8 @@ class LoginViewController: UIViewController {
     super.viewWillAppear(animated)
 
     usernameTextField.text = ""
+
+    self.navigationController?.setNavigationBarHidden(true, animated: animated)
   }
 
   override func viewDidLoad() {
@@ -40,7 +44,11 @@ extension LoginViewController: LoginViewModelDelegate {
       self?.errorLabel.text = status == true ? "" : "Username can't be empty"
 
       if status == true {
-        self?.navigationController?.setViewControllers([MovieListViewController()], animated: true)
+        guard let movieVC = ModuleManager.shared.module(withType: MovieListModuleManageable.self)?.movieListVC() else {
+          fatalError("Not Registered module")
+        }
+
+        self?.navigationController?.setViewControllers([movieVC], animated: true)
       }
 
     }

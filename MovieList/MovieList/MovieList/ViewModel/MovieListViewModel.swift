@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Networking
 
 protocol MovieListDelegate: class {
   func failedLoad(error: String)

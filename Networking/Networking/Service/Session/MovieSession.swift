@@ -10,13 +10,14 @@ import Foundation
 
 open class Movies {
   public init() {}
-  
+//  public static let shared = Movies()
+
   /// List of movies based on status ( Now Playing, Popular, Top Rated, Upcoming )
   /// - Parameter movie: Movie status
   /// - Parameter page (optional): Movie list of page, by default page is `1`
   /// - Parameter language (optional): Movie language description, by default language is `en-US`
   /// - Parameter completion: Movie response contains success and failed (error)
-  func listOfMovie(movie: MoviePath, page: String = "1", language: String = "en-US",
+  open func listOfMovie(movie: MoviePath, page: String = "1", language: String = "en-US",
                         completion: @escaping CompletionHandler) {
     let param: [String: String] = ["language": language, "page": page]
     

@@ -7,17 +7,24 @@
 //
 
 import UIKit
+import Login
+import MovieList
+import ModuleManager
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
-
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+    ModuleManager.shared.register(modules: [LoginModule(), MovieListModule()])
+    guard let loginVC = ModuleManager.shared.module(withType: LoginModuleManageable.self)?.loginView() else {
+      fatalError("Not registered modules")
+    }
     // Override point for customization after application launch.
     window = UIWindow(frame: UIScreen.main.bounds)
-    window?.rootViewController = UINavigationController(rootViewController: LoginViewController())
+    window?.rootViewController = UINavigationController(rootViewController: loginVC)
     window?.makeKeyAndVisible()
     return true
   }

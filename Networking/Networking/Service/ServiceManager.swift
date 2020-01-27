@@ -14,7 +14,7 @@ enum HTTPMethod: String {
   case PUT
 }
 
-typealias CompletionHandler = (Result<[String: Any], ServiceError>) -> Void
+public typealias CompletionHandler = (Result<[String: Any], ServiceError>) -> Void
 
 class ServiceManager {
   private let session: ServiceSession

@@ -26,7 +26,8 @@ class MovieListViewController: UIViewController, MovieListDelegate {
     viewModel = MovieListViewModel(path: .nowPlaying)
     viewModel?.delegate = self
 
-    collectionView.register(UINib(nibName: MovieItemCell.reuseIdentifier(), bundle: nil),
+    let nib = Bundle(for: MovieItemCell.self)
+    collectionView.register(UINib(nibName: MovieItemCell.reuseIdentifier(), bundle: nib),
                             forCellWithReuseIdentifier: MovieItemCell.reuseIdentifier())
   }
 
