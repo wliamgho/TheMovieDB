@@ -12,6 +12,8 @@
 		5E1265B223D97DBD00C32FEA /* MoviePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1265B123D97DBD00C32FEA /* MoviePath.swift */; };
 		5E1265B423D97DF300C32FEA /* MovieSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1265B323D97DF300C32FEA /* MovieSession.swift */; };
 		5E1265B723D97F8400C32FEA /* MovieResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1265B623D97F8400C32FEA /* MovieResponse.swift */; };
+		5E6BE22C23DE826B0074C5A0 /* DropDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6BE22B23DE826B0074C5A0 /* DropDownButton.swift */; };
+		5E6BE22E23DE82A00074C5A0 /* DropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6BE22D23DE82A00074C5A0 /* DropDownView.swift */; };
 		5E82CBC323D98B22008B6081 /* CodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E82CBC223D98B22008B6081 /* CodableExtensions.swift */; };
 		5E82CBC623D98B89008B6081 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E82CBC523D98B89008B6081 /* MovieModel.swift */; };
 		5EABDA1923D7458E0035D450 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EABDA1823D7458E0035D450 /* AppDelegate.swift */; };
@@ -37,6 +39,8 @@
 		5E1265B123D97DBD00C32FEA /* MoviePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePath.swift; sourceTree = "<group>"; };
 		5E1265B323D97DF300C32FEA /* MovieSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSession.swift; sourceTree = "<group>"; };
 		5E1265B623D97F8400C32FEA /* MovieResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResponse.swift; sourceTree = "<group>"; };
+		5E6BE22B23DE826B0074C5A0 /* DropDownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownButton.swift; sourceTree = "<group>"; };
+		5E6BE22D23DE82A00074C5A0 /* DropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownView.swift; sourceTree = "<group>"; };
 		5E82CBC223D98B22008B6081 /* CodableExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableExtensions.swift; sourceTree = "<group>"; };
 		5E82CBC523D98B89008B6081 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		5EABDA1523D7458E0035D450 /* MovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +123,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		5E6BE22823DE822D0074C5A0 /* DropDown */ = {
+			isa = PBXGroup;
+			children = (
+				5E6BE22B23DE826B0074C5A0 /* DropDownButton.swift */,
+				5E6BE22D23DE82A00074C5A0 /* DropDownView.swift */,
+			);
+			path = DropDown;
+			sourceTree = "<group>";
+		};
 		5E82CBC423D98B3C008B6081 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +186,7 @@
 		5ED2971A23DCA56900F624BB /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				5E6BE22823DE822D0074C5A0 /* DropDown */,
 				5ED2971B23DCA57000F624BB /* CollectionCell */,
 			);
 			path = Components;
@@ -358,8 +372,10 @@
 				5EABDA1923D7458E0035D450 /* AppDelegate.swift in Sources */,
 				5E1265B223D97DBD00C32FEA /* MoviePath.swift in Sources */,
 				5EE7055423DDCA94004FCF11 /* ImageViewExtensions.swift in Sources */,
+				5E6BE22E23DE82A00074C5A0 /* DropDownView.swift in Sources */,
 				5ED2971E23DCA58C00F624BB /* MovieItemCell.swift in Sources */,
 				5ED2971923DC9FEA00F624BB /* MovieListViewModel.swift in Sources */,
+				5E6BE22C23DE826B0074C5A0 /* DropDownButton.swift in Sources */,
 				5E82CBC623D98B89008B6081 /* MovieModel.swift in Sources */,
 				5E1265B423D97DF300C32FEA /* MovieSession.swift in Sources */,
 				5EE4B58623D85C3100D1CF69 /* ServiceSession.swift in Sources */,

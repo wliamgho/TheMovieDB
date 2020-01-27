@@ -11,20 +11,17 @@ import UIKit
 class MovieListViewController: UIViewController, MovieListDelegate {
   @IBOutlet weak var collectionView: UICollectionView!
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-  
+  var dropMenuItem: UIBarButtonItem!
+
   private var data: MovieModel?
 
   var viewModel: MovieListViewModel?
-
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-
-    activityIndicator.startAnimating()
-    activityIndicator.isHidden = false
-  }
-
+  private var dropDownButton: DropDownButton!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    setDropDownMenu()
 
     viewModel = MovieListViewModel(path: .nowPlaying)
     viewModel?.delegate = self
@@ -33,17 +30,40 @@ class MovieListViewController: UIViewController, MovieListDelegate {
                             forCellWithReuseIdentifier: MovieItemCell.reuseIdentifier())
   }
 
+  private func setDropDownMenu() {
+    dropDownButton = DropDownButton(type: .system)
+    dropDownButton.frame = CGRect.zero
+    dropDownButton.setTitleColor(.blue, for: .normal)
+    dropDownButton.setTitle("Layout", for: .normal)
+    dropDownButton.clipsToBounds = true
+    dropDownButton.translatesAutoresizingMaskIntoConstraints = false
+
+    dropDownButton.dropView.options = ["List", "Columns"]
+
+    dropMenuItem = UIBarButtonItem(customView: dropDownButton)
+//    self.navigationItem.rightBarButtonItem = dropMenuItem
+    self.navigationItem.setRightBarButton(dropMenuItem, animated: true)
+  }
+
+  // Delegate method
   func failedLoad(error: String) {
     // Error actions
   }
 
   func successLoad(data: MovieModel) {
-    activityIndicator.stopAnimating()
-    activityIndicator.isHidden = true
-    
     self.data = data
 
     self.collectionView.reloadData()
+  }
+
+  func isLoading(status: Bool) {
+    if status == true {
+      activityIndicator.startAnimating()
+    } else {
+      activityIndicator.stopAnimating()
+    }
+
+    activityIndicator.isHidden = !status
   }
 }
 
