@@ -6,5 +6,6 @@ target 'MovieDB' do
   use_frameworks!
 
   # Pods for MovieDB
-
+  pod 'Alamofire', '~> 5.2'
+  pod 'SDWebImage', '~> 5.8'
 end
