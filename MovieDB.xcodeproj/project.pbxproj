@@ -7,9 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D440F4724BAF160006EC97A /* ServiceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D440F4624BAF160006EC97A /* ServiceResponse.swift */; };
+		3D440F4C24BB1302006EC97A /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D440F4B24BB1302006EC97A /* APIEndpoints.swift */; };
 		3DBBC12424B9A34000E7C272 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DBBC12624B9A34000E7C272 /* Localizable.strings */; };
 		3DBBC12F24B9A4C200E7C272 /* MovieDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBBC12E24B9A4C200E7C272 /* MovieDBTests.swift */; };
 		3DBBC13D24B9A4DD00E7C272 /* MovieDBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBBC13C24B9A4DD00E7C272 /* MovieDBUITests.swift */; };
+		3DBBC14624B9A77800E7C272 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBBC14524B9A77800E7C272 /* ServiceManager.swift */; };
+		3DBBC14824B9BA2800E7C272 /* ServiceSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBBC14724B9BA2800E7C272 /* ServiceSession.swift */; };
+		3DBBC14A24B9BECE00E7C272 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBBC14924B9BECE00E7C272 /* AppConfiguration.swift */; };
+		3DBBC14C24B9BF6100E7C272 /* ServiceConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBBC14B24B9BF6100E7C272 /* ServiceConfig.swift */; };
+		3DBBC14E24B9D47800E7C272 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBBC14D24B9D47800E7C272 /* ServiceError.swift */; };
+		3DBBC15224B9E88000E7C272 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBBC15124B9E88000E7C272 /* Endpoint.swift */; };
 		5C0E04079E68AB6AB3E9DFB5 /* Pods_MovieDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 132C30B69B01CBF527CDB660 /* Pods_MovieDB.framework */; };
 		5EABDA1923D7458E0035D450 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EABDA1823D7458E0035D450 /* AppDelegate.swift */; };
 		5EABDA2023D745910035D450 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EABDA1F23D745910035D450 /* Assets.xcassets */; };
@@ -36,6 +44,8 @@
 /* Begin PBXFileReference section */
 		026EE33634C214256EC20A44 /* Pods-MovieDB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieDB.release.xcconfig"; path = "Target Support Files/Pods-MovieDB/Pods-MovieDB.release.xcconfig"; sourceTree = "<group>"; };
 		132C30B69B01CBF527CDB660 /* Pods_MovieDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D440F4624BAF160006EC97A /* ServiceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResponse.swift; sourceTree = "<group>"; };
+		3D440F4B24BB1302006EC97A /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		3DBBC12124B9A2FE00E7C272 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		3DBBC12524B9A34000E7C272 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3DBBC12724B9A34100E7C272 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -45,6 +55,12 @@
 		3DBBC13A24B9A4DD00E7C272 /* MovieDBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieDBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DBBC13C24B9A4DD00E7C272 /* MovieDBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDBUITests.swift; sourceTree = "<group>"; };
 		3DBBC13E24B9A4DD00E7C272 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DBBC14524B9A77800E7C272 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		3DBBC14724B9BA2800E7C272 /* ServiceSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSession.swift; sourceTree = "<group>"; };
+		3DBBC14924B9BECE00E7C272 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		3DBBC14B24B9BF6100E7C272 /* ServiceConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceConfig.swift; sourceTree = "<group>"; };
+		3DBBC14D24B9D47800E7C272 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		3DBBC15124B9E88000E7C272 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		5EABDA1523D7458E0035D450 /* MovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EABDA1823D7458E0035D450 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EABDA1F23D745910035D450 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,10 +103,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3D440F4824BB12C2006EC97A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3D440F4B24BB1302006EC97A /* APIEndpoints.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		3DBBC10924B99CAB00E7C272 /* Application */ = {
 			isa = PBXGroup;
 			children = (
 				5EABDA1823D7458E0035D450 /* AppDelegate.swift */,
+				3DBBC14924B9BECE00E7C272 /* AppConfiguration.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -112,6 +137,7 @@
 		3DBBC10C24B99CC300E7C272 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				3D440F4824BB12C2006EC97A /* Network */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -119,6 +145,7 @@
 		3DBBC10D24B99CC700E7C272 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				3DBBC14424B9A76A00E7C272 /* Network */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -150,6 +177,19 @@
 				3DBBC13E24B9A4DD00E7C272 /* Info.plist */,
 			);
 			path = MovieDBUITests;
+			sourceTree = "<group>";
+		};
+		3DBBC14424B9A76A00E7C272 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3DBBC14524B9A77800E7C272 /* ServiceManager.swift */,
+				3D440F4624BAF160006EC97A /* ServiceResponse.swift */,
+				3DBBC14724B9BA2800E7C272 /* ServiceSession.swift */,
+				3DBBC14B24B9BF6100E7C272 /* ServiceConfig.swift */,
+				3DBBC14D24B9D47800E7C272 /* ServiceError.swift */,
+				3DBBC15124B9E88000E7C272 /* Endpoint.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		5EABDA0C23D7458E0035D450 = {
@@ -388,7 +428,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DBBC14E24B9D47800E7C272 /* ServiceError.swift in Sources */,
+				3DBBC15224B9E88000E7C272 /* Endpoint.swift in Sources */,
+				3DBBC14C24B9BF6100E7C272 /* ServiceConfig.swift in Sources */,
+				3D440F4C24BB1302006EC97A /* APIEndpoints.swift in Sources */,
+				3D440F4724BAF160006EC97A /* ServiceResponse.swift in Sources */,
 				5EABDA1923D7458E0035D450 /* AppDelegate.swift in Sources */,
+				3DBBC14624B9A77800E7C272 /* ServiceManager.swift in Sources */,
+				3DBBC14A24B9BECE00E7C272 /* AppConfiguration.swift in Sources */,
+				3DBBC14824B9BA2800E7C272 /* ServiceSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,9 +681,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F01B81CB5E22B1D989198ADF /* Pods-MovieDB.debug.xcconfig */;
 			buildSettings = {
+				API_BASE_URL = "http://api.themoviedb.org";
+				API_KEY = 0340dd96e32f995c600b8deb3dffbfb4;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BY8P5XC76R;
+				IMAGE_BASE_URL = "http://image.tmdb.org";
 				INFOPLIST_FILE = MovieDB/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -653,9 +704,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 026EE33634C214256EC20A44 /* Pods-MovieDB.release.xcconfig */;
 			buildSettings = {
+				API_BASE_URL = "http://api.themoviedb.org";
+				API_KEY = 0340dd96e32f995c600b8deb3dffbfb4;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BY8P5XC76R;
+				IMAGE_BASE_URL = "http://image.tmdb.org";
 				INFOPLIST_FILE = MovieDB/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
