@@ -40,8 +40,7 @@ final class ServiceManager {
   }
 
   // MARK: - Load sesion request
-  private func load(endpoint: Request, completion: @escaping CompletionHandler) -> DataRequest {
-    let url = config.baseURL.absoluteString + endpoint.path
+  private func load(url: URL, endpoint: Request, completion: @escaping CompletionHandler) -> DataRequest {
     let service = AF.request(url,
                              method: endpoint.method,
                              parameters: endpoint.queryParams,
@@ -68,6 +67,12 @@ final class ServiceManager {
 
 extension ServiceManager: ServiceSession {
   func request(endpoint: Request, completion: @escaping CompletionHandler) -> DataRequest? {
-    return self.load(endpoint: endpoint, completion: completion)
+    do {
+      let url = try endpoint.urlRequest(config: config)
+      return self.load(url: url, endpoint: endpoint, completion: completion)
+    } catch {
+      completion(.failure(.invalidUrl))
+      return nil
+    }
   }
 }

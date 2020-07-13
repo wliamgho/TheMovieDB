@@ -12,19 +12,19 @@ import Alamofire
 public protocol ServiceConfig {
   var baseURL: URL { get }
   var headers: HTTPHeaders? { get }
-  var parameters: [String : String] { get }
+  var queryParameter: [String : String] { get }
 }
 
 final class ServiceConfigRequest: ServiceConfig {
   public let baseURL: URL
   var headers: HTTPHeaders? = nil
-  var parameters: [String : String] = [:]
+  var queryParameter: [String : String] = [:]
 
   init(baseURL: URL,
        headers: HTTPHeaders? = nil,
-       parameters: [String : String] = [:]) {
+       queryParameter: [String : String] = [:]) {
     self.baseURL = baseURL
     self.headers = headers
-    self.parameters = parameters
+    self.queryParameter = queryParameter
   }
 }
