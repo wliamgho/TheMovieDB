@@ -32,15 +32,13 @@ final class ServiceManager {
     switch code {
     case .notConnectedToInternet: return .noConnection
     case .badURL: return .invalidUrl
-    case .unsupportedURL: return .invalidUrl
-    case .unknown: return .invalidUrl
     default:
       return .base(error)
     }
   }
 
   // MARK: - Load sesion request
-  private func load(url: URL, endpoint: Request, completion: @escaping CompletionHandler) -> DataRequest {
+  private func load(url: URL, endpoint: ResponseRequest, completion: @escaping CompletionHandler) -> DataRequest {
     let service = AF.request(url,
                              method: endpoint.method,
                              parameters: endpoint.queryParams,
@@ -66,7 +64,7 @@ final class ServiceManager {
 }
 
 extension ServiceManager: ServiceSession {
-  func request(endpoint: Request, completion: @escaping CompletionHandler) -> DataRequest? {
+  func request(endpoint: ResponseRequest, completion: @escaping CompletionHandler) -> DataRequest? {
     do {
       let url = try endpoint.urlRequest(config: config)
       return self.load(url: url, endpoint: endpoint, completion: completion)

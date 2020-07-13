@@ -11,10 +11,10 @@ import Alamofire
 
 public protocol ServiceSession {
   typealias CompletionHandler = (Result<Data?, ErrorResponse>) -> Void
-  func request(endpoint: Request, completion: @escaping CompletionHandler) -> DataRequest?
+  func request(endpoint: ResponseRequest, completion: @escaping CompletionHandler) -> DataRequest?
 }
 
 public protocol ServiceRequest {
   typealias CompletionHandler = (AFDataResponse<Data>) -> Void
-  func request(config: ServiceConfig, endpoint: Request, completion: @escaping CompletionHandler) -> DataRequest
+  func request(config: ServiceConfig, endpoint: ResponseRequest, completion: @escaping CompletionHandler) -> DataRequest
 }

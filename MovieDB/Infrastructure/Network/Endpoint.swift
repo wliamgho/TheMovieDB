@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 
-public protocol Request {
+public protocol ResponseRequest {
   var path: String { get }
   var isFullPath: Bool { get }
   var method: HTTPMethod { get }
@@ -20,7 +20,7 @@ public protocol Request {
   func urlRequest(config: ServiceConfig) throws -> URL
 }
 
-public protocol ResponseRequestable: Request {
+public protocol ResponseRequestable: ResponseRequest {
   associatedtype Response
 
   var responseDecoder: DataResponse { get }

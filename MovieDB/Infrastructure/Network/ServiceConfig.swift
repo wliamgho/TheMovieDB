@@ -15,10 +15,10 @@ public protocol ServiceConfig {
   var queryParameter: [String : String] { get }
 }
 
-final class ServiceConfigRequest: ServiceConfig {
+public struct ServiceConfigRequest: ServiceConfig {
   public let baseURL: URL
-  var headers: HTTPHeaders? = nil
-  var queryParameter: [String : String] = [:]
+  public var headers: HTTPHeaders? = nil
+  public var queryParameter: [String : String] = [:]
 
   init(baseURL: URL,
        headers: HTTPHeaders? = nil,
