@@ -14,23 +14,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
+  private var appDIContainer = AppDIContainer()
+  private var appFlowCoordinator: AppFlowCoordinator?
+  private var rootController = UINavigationController()
+
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
-    let url = URL(string: AppConfiguration().apiBaseURL)
-    let config = ServiceConfigRequest(baseURL: url!, queryParameter: ["api_key": AppConfiguration().apiKey])
-    let session = ServiceManager(config: config)
-    let endpoint: Endpoint<Data> = Endpoint(path: "/movie/latest",
-                                            method: .get,
-                                            queryParams: ["language": "en-US"])
-    session.request(endpoint: endpoint) { (response) in
-      switch response {
-      case .success(_):
-        print("HERE")
-      case .failure(let error):
-        print("ERROR GET IMAGE", error.localizedDescription)
-      }
-    }
-    
+
+    window = UIWindow(frame: UIScreen.main.bounds)
+    window?.rootViewController = rootController
+    appFlowCoordinator = AppFlowCoordinator()
+    window?.makeKeyAndVisible()
     return true
   }
 
