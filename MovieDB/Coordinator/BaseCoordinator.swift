@@ -6,8 +6,14 @@
 //  Copyright © 2020 William. All rights reserved.
 //
 
-class BaseCoordinator {
+class BaseCoordinator: Coordinator {
   var childCoordinators: [Coordinator] = []
+
+  func start() {
+    start(with: nil)
+  }
+
+  func start(with option: DeeplinkPath?) { }
 
   func addDependency(_ coordinator: Coordinator) {
     guard !childCoordinators.contains(where: { $0 === coordinator }) else { return }
@@ -30,12 +36,4 @@ class BaseCoordinator {
       break
     }
   }
-}
-
-extension BaseCoordinator: Coordinator {
-  func start() {
-    start(with: nil)
-  }
-
-  func start(with option: DeeplinkPath?) { }
 }

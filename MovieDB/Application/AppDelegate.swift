@@ -21,11 +21,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
 
+    setRootViewController()
+    return true
+  }
+
+  private func setRootViewController() {
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.rootViewController = rootController
-    appFlowCoordinator = AppFlowCoordinator()
+    appFlowCoordinator = AppFlowCoordinator(router: BaseRouter(rootController: rootController),
+                                            DIContainer: appDIContainer)
+    appFlowCoordinator?.start()
+//    appFlowCoordinator?.start(with: <#T##DeeplinkPath?#>) Use this for Deeplink or PushNotification
     window?.makeKeyAndVisible()
-    return true
   }
 
   func applicationWillResignActive(_ application: UIApplication) {
