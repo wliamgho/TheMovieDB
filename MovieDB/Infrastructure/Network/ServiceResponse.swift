@@ -20,11 +20,6 @@ public protocol DataService {
   @discardableResult
   func request<T: Decodable, E: ResponseRequestable>(withEndpoint endpoint: E,
                                                  completion: @escaping CompletionHandler<T>) -> DataRequest? where E.Response == T
-
-  // Request image url
-//  @discardableResult
-//  func request<E: ResponseRequest>(withEndpoint endpoint: E,
-//                                   completion: @escaping CompletionHandler<Void>) -> DataRequest? where E.Response == Void
 }
 
 public final class ServiceResponse {
