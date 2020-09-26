@@ -1,2 +1,1 @@
-# MovieDB-Modular
-Modularization of MovieDB
+# MovieDB-MVVM Structure
