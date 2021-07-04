@@ -7,9 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3569E9222691F42C00C15E80 /* Binders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3569E9212691F42C00C15E80 /* Binders.swift */; };
+		3569E9292691F49500C15E80 /* NetworkModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3569E9282691F49500C15E80 /* NetworkModule.swift */; };
+		3569E92B2691F4A700C15E80 /* NetworkRequest+DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3569E92A2691F4A700C15E80 /* NetworkRequest+DI.swift */; };
+		3569E92E2691F4D900C15E80 /* Responsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3569E92D2691F4D900C15E80 /* Responsable.swift */; };
+		3569E9302691F4EF00C15E80 /* NetworkSession+DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3569E92F2691F4EF00C15E80 /* NetworkSession+DI.swift */; };
+		3569E9322691F52200C15E80 /* AppDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3569E9312691F52200C15E80 /* AppDI.swift */; };
+		3569E9342691F53000C15E80 /* AppDI+module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3569E9332691F53000C15E80 /* AppDI+module.swift */; };
 		35F862AD2691DAE900783C5F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F862AC2691DAE900783C5F /* Constant.swift */; };
 		35F862AF2691DBED00783C5F /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F862AE2691DBED00783C5F /* NetworkSession.swift */; };
-		35F862B12691DDA600783C5F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F862B02691DDA600783C5F /* NetworkManager.swift */; };
+		35F862B12691DDA600783C5F /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F862B02691DDA600783C5F /* NetworkRequest.swift */; };
 		35F862B42691E08C00783C5F /* Latest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F862B32691E08C00783C5F /* Latest.swift */; };
 		3D70FC41251F742C007C5AB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D70FC40251F742C007C5AB9 /* AppDelegate.swift */; };
 		3D70FC49251F742C007C5AB9 /* TheMovieDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D70FC47251F742C007C5AB9 /* TheMovieDB.xcdatamodeld */; };
@@ -41,9 +48,16 @@
 
 /* Begin PBXFileReference section */
 		2E989F13902F0C3BF74360C3 /* Pods_TheMovieDBTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheMovieDBTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3569E9212691F42C00C15E80 /* Binders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binders.swift; sourceTree = "<group>"; };
+		3569E9282691F49500C15E80 /* NetworkModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModule.swift; sourceTree = "<group>"; };
+		3569E92A2691F4A700C15E80 /* NetworkRequest+DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkRequest+DI.swift"; sourceTree = "<group>"; };
+		3569E92D2691F4D900C15E80 /* Responsable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Responsable.swift; sourceTree = "<group>"; };
+		3569E92F2691F4EF00C15E80 /* NetworkSession+DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkSession+DI.swift"; sourceTree = "<group>"; };
+		3569E9312691F52200C15E80 /* AppDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDI.swift; sourceTree = "<group>"; };
+		3569E9332691F53000C15E80 /* AppDI+module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDI+module.swift"; sourceTree = "<group>"; };
 		35F862AC2691DAE900783C5F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		35F862AE2691DBED00783C5F /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
-		35F862B02691DDA600783C5F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		35F862B02691DDA600783C5F /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		35F862B32691E08C00783C5F /* Latest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Latest.swift; sourceTree = "<group>"; };
 		3D70FC3D251F742C007C5AB9 /* TheMovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D70FC40251F742C007C5AB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,12 +109,76 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3569E9202691F42500C15E80 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				3569E9212691F42C00C15E80 /* Binders.swift */,
+				3569E9332691F53000C15E80 /* AppDI+module.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		3569E9232691F44300C15E80 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				3D70FC40251F742C007C5AB9 /* AppDelegate.swift */,
+				3569E9312691F52200C15E80 /* AppDI.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		3569E9242691F44E00C15E80 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3D70FC4A251F742F007C5AB9 /* Assets.xcassets */,
+				3D70FC4C251F742F007C5AB9 /* LaunchScreen.storyboard */,
+				3D70FC4F251F742F007C5AB9 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		3569E9252691F46000C15E80 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				35F862AE2691DBED00783C5F /* NetworkSession.swift */,
+				3569E92F2691F4EF00C15E80 /* NetworkSession+DI.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		3569E9262691F46A00C15E80 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				35F862B02691DDA600783C5F /* NetworkRequest.swift */,
+				3569E92A2691F4A700C15E80 /* NetworkRequest+DI.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		3569E9272691F48F00C15E80 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				3569E9282691F49500C15E80 /* NetworkModule.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		3569E92C2691F4C800C15E80 /* Responsable */ = {
+			isa = PBXGroup;
+			children = (
+				3569E92D2691F4D900C15E80 /* Responsable.swift */,
+			);
+			path = Responsable;
+			sourceTree = "<group>";
+		};
 		35F862AA2691DAC600783C5F /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				3569E92C2691F4C800C15E80 /* Responsable */,
+				3569E9272691F48F00C15E80 /* DI */,
+				3569E9262691F46A00C15E80 /* Request */,
+				3569E9252691F46000C15E80 /* Session */,
 				35F862B22691DFC700783C5F /* Endpoint */,
-				35F862AE2691DBED00783C5F /* NetworkSession.swift */,
-				35F862B02691DDA600783C5F /* NetworkManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -146,12 +224,11 @@
 		3D70FC3F251F742C007C5AB9 /* TheMovieDB */ = {
 			isa = PBXGroup;
 			children = (
-				35F862AB2691DAE600783C5F /* Common */,
+				3569E9232691F44300C15E80 /* App */,
+				3569E9202691F42500C15E80 /* DI */,
 				35F862AA2691DAC600783C5F /* Network */,
-				3D70FC40251F742C007C5AB9 /* AppDelegate.swift */,
-				3D70FC4A251F742F007C5AB9 /* Assets.xcassets */,
-				3D70FC4C251F742F007C5AB9 /* LaunchScreen.storyboard */,
-				3D70FC4F251F742F007C5AB9 /* Info.plist */,
+				35F862AB2691DAE600783C5F /* Common */,
+				3569E9242691F44E00C15E80 /* Resources */,
 				3D70FC47251F742C007C5AB9 /* TheMovieDB.xcdatamodeld */,
 			);
 			path = TheMovieDB;
@@ -436,12 +513,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3569E9322691F52200C15E80 /* AppDI.swift in Sources */,
 				3D70FC49251F742C007C5AB9 /* TheMovieDB.xcdatamodeld in Sources */,
 				35F862AF2691DBED00783C5F /* NetworkSession.swift in Sources */,
 				35F862B42691E08C00783C5F /* Latest.swift in Sources */,
-				35F862B12691DDA600783C5F /* NetworkManager.swift in Sources */,
+				3569E9222691F42C00C15E80 /* Binders.swift in Sources */,
+				35F862B12691DDA600783C5F /* NetworkRequest.swift in Sources */,
+				3569E9302691F4EF00C15E80 /* NetworkSession+DI.swift in Sources */,
 				3D70FC41251F742C007C5AB9 /* AppDelegate.swift in Sources */,
+				3569E9292691F49500C15E80 /* NetworkModule.swift in Sources */,
+				3569E9342691F53000C15E80 /* AppDI+module.swift in Sources */,
 				35F862AD2691DAE900783C5F /* Constant.swift in Sources */,
+				3569E92E2691F4D900C15E80 /* Responsable.swift in Sources */,
+				3569E92B2691F4A700C15E80 /* NetworkRequest+DI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
