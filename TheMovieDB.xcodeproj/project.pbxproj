@@ -10,6 +10,7 @@
 		35F862AD2691DAE900783C5F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F862AC2691DAE900783C5F /* Constant.swift */; };
 		35F862AF2691DBED00783C5F /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F862AE2691DBED00783C5F /* NetworkSession.swift */; };
 		35F862B12691DDA600783C5F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F862B02691DDA600783C5F /* NetworkManager.swift */; };
+		35F862B42691E08C00783C5F /* Latest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F862B32691E08C00783C5F /* Latest.swift */; };
 		3D70FC41251F742C007C5AB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D70FC40251F742C007C5AB9 /* AppDelegate.swift */; };
 		3D70FC49251F742C007C5AB9 /* TheMovieDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D70FC47251F742C007C5AB9 /* TheMovieDB.xcdatamodeld */; };
 		3D70FC4B251F742F007C5AB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D70FC4A251F742F007C5AB9 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		35F862AC2691DAE900783C5F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		35F862AE2691DBED00783C5F /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
 		35F862B02691DDA600783C5F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		35F862B32691E08C00783C5F /* Latest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Latest.swift; sourceTree = "<group>"; };
 		3D70FC3D251F742C007C5AB9 /* TheMovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D70FC40251F742C007C5AB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D70FC48251F742C007C5AB9 /* TheMovieDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TheMovieDB.xcdatamodel; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 		35F862B22691DFC700783C5F /* Endpoint */ = {
 			isa = PBXGroup;
 			children = (
+				35F862B32691E08C00783C5F /* Latest.swift */,
 			);
 			path = Endpoint;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 			files = (
 				3D70FC49251F742C007C5AB9 /* TheMovieDB.xcdatamodeld in Sources */,
 				35F862AF2691DBED00783C5F /* NetworkSession.swift in Sources */,
+				35F862B42691E08C00783C5F /* Latest.swift in Sources */,
 				35F862B12691DDA600783C5F /* NetworkManager.swift in Sources */,
 				3D70FC41251F742C007C5AB9 /* AppDelegate.swift in Sources */,
 				35F862AD2691DAE900783C5F /* Constant.swift in Sources */,
