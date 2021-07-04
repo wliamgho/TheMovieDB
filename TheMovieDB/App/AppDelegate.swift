@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Cleanse
 import CoreData
 
 @UIApplicationMain
@@ -16,7 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+    let propertyInjector: PropertyInjector<AppDelegate>
+    propertyInjector = try! ComponentFactory.of(AppDI.Module.self).build(())
+    propertyInjector.injectProperties(into: self)
+    window?.makeKeyAndVisible()
     return true
   }
 
@@ -89,4 +93,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       }
   }
 
+}
+
+extension AppDelegate {
+    func injectProperties(_ window: UIWindow) {
+        self.window = window
+    }
 }

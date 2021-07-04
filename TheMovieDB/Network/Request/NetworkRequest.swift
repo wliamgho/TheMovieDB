@@ -1,5 +1,5 @@
 //
-//  NetworkManager.swift
+//  NetworkRequest.swift
 //  TheMovieDB
 //
 //  Created by William on 04/07/21.
@@ -15,7 +15,7 @@ public protocol NetworkRequest {
                                completion: @escaping Completion<T>)
 }
 
-struct NetworkManager {
+struct NetworkSessionRequest {
     private var session: SessionRequest
 
     init(_ session: SessionRequest = NetworkSession()) {
@@ -23,7 +23,7 @@ struct NetworkManager {
     }
 }
 
-extension NetworkManager: NetworkRequest {
+extension NetworkSessionRequest: NetworkRequest {
     func request<T>(_ url: URLRequestConvertible, decoder: JSONDecoder, completion: @escaping Completion<T>) where T : Decodable {
         session.dataRequest(urlRequest: url).responseDecodable(decoder: decoder) { (response: DataResponse<T, AFError>) in
             switch response.result {
