@@ -16,6 +16,8 @@ extension AppDI {
 
         static func configure(binder: SingletonBinder) {
             binder.include(module: NetworkModule.self)
+            binder.include(module: UIKitModule.self)
+            binder.include(module: NavigationRoute.Module.self)
         }
 
         static func configureRoot(binder bind: ReceiptBinder<Root>) -> BindingReceipt<Root> {
