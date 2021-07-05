@@ -8,4 +8,4 @@
 
 import Foundation
 
-class AppDI {}
+class AppDIContainer {}
