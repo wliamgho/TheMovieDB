@@ -11,15 +11,17 @@ import UIKit
 class LoginCoordinator: BaseCoordinator {
     private let route: Route
 
+    var finishFlow: (() -> Void?)?
+
     init(route: Route) {
         self.route = route
     }
 
     override func start() {
         let vc = LoginViewController()
-        let actions = LoginViewModelActions(showNextView: {
-            self.finishFlow(self)
-            self.showNextView()
+        let actions = LoginViewModelActions(showNextView: { [weak self] in
+            self?.finishFlow?()
+            self?.showNextView()
         })
         let viewModel = LoginViewModel(actions: actions)
         vc.viewModel = viewModel
@@ -27,6 +29,6 @@ class LoginCoordinator: BaseCoordinator {
     }
 
     private func showNextView() {
-//        route.push(NextViewController().createModule())        
+        route.push(NextViewController().createModule())
     }
 }

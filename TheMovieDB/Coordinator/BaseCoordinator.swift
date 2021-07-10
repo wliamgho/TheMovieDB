@@ -15,9 +15,6 @@ class BaseCoordinator: Coordinator {
         preconditionFailure("Needs to be overriden by subclass")
     }
 
-//    func finishFlow(_: () -> Void) {
-//        preconditionFailure("Needs to be overriden by subclass")
-//    }
     func finishFlow(_ coordinator: Coordinator) {
         self.removeChild(coordinator)
     }

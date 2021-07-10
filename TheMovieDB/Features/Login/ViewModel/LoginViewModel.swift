@@ -19,7 +19,6 @@ final class LoginViewModel {
     private let actions: LoginViewModelActions
     init(actions: LoginViewModelActions) {
         self.actions = actions
-        print("INITIALIZE LOGIN VIEW MODEL")
     }
 }
 
@@ -38,26 +37,10 @@ extension LoginViewModel: ViewModel {
         let isFormValid = Observable.combineLatest(input.email, input.password) { (username, password) in
             return !username.isEmpty && !password.isEmpty
         }.asDriver(onErrorJustReturn: false)
-        input.loginTapped.withLatestFrom(isFormValid).subscribe(onNext: { _ in
-            print("NEXT VIEW")
-            
-        }, onError: { error in
-            print("ERROR TAPPED", error.localizedDescription)
+        input.loginTapped.withLatestFrom(isFormValid).subscribe(onNext: { [weak self] _ in
+            Defaults.setHasLogin(true)
+            self?.actions.showNextView()
         }).disposed(by: dispose)
         return Output(isLogin: isFormValid)
     }
 }
-
-//extension LoginViewModel: ViewModelType {
-//    struct Input {
-//        let tapped: () -> Void
-//    }
-//
-//    struct Output {
-//
-//    }
-//
-//    func transform(_ input: Input) -> Output {
-//        return Output()
-//    }
-//}

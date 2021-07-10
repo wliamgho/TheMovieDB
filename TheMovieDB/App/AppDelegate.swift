@@ -13,15 +13,12 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    private let container = Container()
+    static let container = Container()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        window = UIWindow(frame: UIScreen.main.bounds)
-        let route = NavigationRoute(window: window!)
-        let container = AppDIContainer()
-        let coordinator = AppCoordinator(route: route, container: container)
-        coordinator.start()
-        window?.makeKeyAndVisible()
+        AppDelegate.container.registerDependencies()
+        let coordinator = AppDelegate.container.resolve(AppCoordinator.self)
+        coordinator?.start()
         return true
     }
 }

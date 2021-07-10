@@ -11,5 +11,4 @@ import Foundation
 protocol Coordinator: AnyObject {
     func start()
     func finishFlow(_ coordinator: Coordinator)
-//    func finishFlow(_: () -> Void)
 }
