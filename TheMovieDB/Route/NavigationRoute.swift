@@ -12,14 +12,10 @@ final class NavigationRoute: NSObject, Route {
     private weak var rootController: UINavigationController?
     private var completions: [UIViewController: () -> Void] = [:]
 
-//    init(rootController: UINavigationController) {
-//        self.rootController = rootController
-//        completions = [:]
-//    }
     init(window: UIWindow) {
         let navigationController = UINavigationController()
-        rootController = navigationController
         window.rootViewController = navigationController
+        rootController = window.rootViewController as! UINavigationController
         window.makeKeyAndVisible()
         completions = [:]
     }

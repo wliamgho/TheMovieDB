@@ -18,6 +18,12 @@ class AppCoordinator: BaseCoordinator {
     }
 
     override func start() {
-        
+        let auth = container.authContainer
+        let coordinator = auth.makeLoginFlowCoordinator(route: route)
+//        coordinator.finishFlow {
+//            self.removeChild(coordinator)
+//        }
+        addChild(coordinator)
+        coordinator.start()
     }
 }

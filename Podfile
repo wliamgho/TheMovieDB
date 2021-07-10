@@ -5,7 +5,7 @@ target 'TheMovieDB' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod 'Alamofire'
-  pod 'Cleanse'
+  pod 'Swinject'
   # Pods for TheMovieDB
 
   target 'TheMovieDBTests' do
@@ -16,5 +16,4 @@ target 'TheMovieDB' do
   target 'TheMovieDBUITests' do
     # Pods for testing
   end
-
 end

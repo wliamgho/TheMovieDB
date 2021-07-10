@@ -7,5 +7,13 @@
 //
 
 import Foundation
+import Swinject
 
-class AppDIContainer {}
+struct AppDIContainer {
+    let authContainer: AuthContainer = {
+        let container = Container()
+        let authContainer = AuthContainer()
+        container.register(AuthContainer.self) { _ in authContainer }
+        return authContainer
+    }()
+}

@@ -15,11 +15,17 @@ class BaseCoordinator: Coordinator {
         preconditionFailure("Needs to be overriden by subclass")
     }
 
+//    func finishFlow(_: () -> Void) {
+//        preconditionFailure("Needs to be overriden by subclass")
+//    }
+    func finishFlow(_ coordinator: Coordinator) {
+        self.removeChild(coordinator)
+    }
+
     func addChild(_ coordinator: Coordinator) {
         guard !childCoordinators.contains(where: { $0 === coordinator }) else { return }
         childCoordinators.append(coordinator)
     }
-
     
     func removeChild(_ coordinator: Coordinator) {
         guard childCoordinators.isEmpty == false else {
@@ -31,10 +37,6 @@ class BaseCoordinator: Coordinator {
             childCoordinators.remove(at: index)
             break
         }
-    }
-
-    func removeChildCoordinatorIn<T>(type: T.Type) {
-        childCoordinators = childCoordinators.filter { $0 is T == false }
     }
 
     func removeAllChildCoordinator() {
