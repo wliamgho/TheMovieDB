@@ -8,14 +8,15 @@
 
 import UIKit
 
-final class NavigationRoute: NSObject, Route {
+class NavigationRoute: NSObject, Route {
     private weak var rootController: UINavigationController?
     private var completions: [UIViewController: () -> Void] = [:]
+    private var window = UIWindow(frame: UIScreen.main.bounds)
 
-    init(window: UIWindow) {
+    override init() {
         let navigationController = UINavigationController()
         window.rootViewController = navigationController
-        rootController = window.rootViewController as! UINavigationController
+        rootController = (window.rootViewController as! UINavigationController)
         window.makeKeyAndVisible()
         completions = [:]
     }

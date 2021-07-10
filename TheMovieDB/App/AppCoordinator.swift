@@ -7,23 +7,38 @@
 //
 
 import Foundation
+import Swinject
 
 class AppCoordinator: BaseCoordinator {
     private let route: Route
-    private let container: AppDIContainer
 
-    init(route: Route, container: AppDIContainer) {
+    init(route: Route) {
         self.route = route
-        self.container = container
     }
 
     override func start() {
-        let auth = container.authContainer
-        let coordinator = auth.makeLoginFlowCoordinator(route: route)
-//        coordinator.finishFlow {
-//            self.removeChild(coordinator)
+//        switch Defaults.hasLogin() {
+//        case true:
+//            // Show Tab
+//            print("has logged in")
+//            showTabFlow()
+//        case false:
+//            // Show Login
+//            print("not logged in")
+//            showLoginFlow()
 //        }
-        addChild(coordinator)
-        coordinator.start()
+        showLoginFlow()
+    }
+
+    private func showTabFlow() {
+        
+    }
+    
+    private func showLoginFlow() {
+        let coordinator = AppDelegate.container.resolve(LoginCoordinator.self)
+        coordinator?.finishFlow = {
+            self.finishFlow(coordinator!)
+        }
+        coordinator?.start()
     }
 }
