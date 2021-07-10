@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 struct LoginViewModelActions {
     let showNextView: () -> Void
@@ -17,6 +19,12 @@ final class LoginViewModel {
     init(actions: LoginViewModelActions) {
         self.actions = actions
         print("INITIALIZE LOGIN VIEW MODEL")
+    }
+}
+
+extension LoginViewModel: ViewModel {
+    struct Input {
+        
     }
 }
 
