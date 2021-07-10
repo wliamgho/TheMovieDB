@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class LoginViewController: UIViewController {
     private lazy var headerTitle: UILabel = {
@@ -41,18 +42,15 @@ class LoginViewController: UIViewController {
         return field
     }()
 
-    private lazy var loginButton: UIButton = {
-        let button = UIButton(type: .system)
+    private lazy var loginButton: FormButton = {
+        let button = FormButton(type: .custom)
         button.setTitle("Log In", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
-        button.backgroundColor = .systemBlue
-        button.layer.cornerRadius = 16
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
     var viewModel: LoginViewModel?
+    private let dispose = DisposeBag()
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -65,6 +63,7 @@ class LoginViewController: UIViewController {
 
         setupUI()
         setupConstraint()
+        bindViewModel()
     }
 }
 
@@ -94,5 +93,13 @@ private extension LoginViewController {
             // LoginButton
             loginButton.heightAnchor.constraint(equalToConstant: 50)
         ])
+    }
+
+    private func bindViewModel() {
+        let input = LoginViewModel.Input(email: emailField.rx.text.orEmpty.asObservable(),
+                                         password: passwordField.rx.text.orEmpty.asObservable(),
+                                         loginTapped: loginButton.rx.tap.asObservable())
+        let output = viewModel?.transform(input)
+        output?.isLogin.drive(loginButton.rx.isEnabled).disposed(by: dispose)
     }
 }

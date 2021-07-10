@@ -24,6 +24,7 @@
 		35E19F262692D774006F3500 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E19F252692D774006F3500 /* Log.swift */; };
 		35EDE3CD26999E9F00B8E6D9 /* RoundTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDE3CC26999E9F00B8E6D9 /* RoundTextField.swift */; };
 		35EDE3D22699A2AE00B8E6D9 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDE3D12699A2AE00B8E6D9 /* UIStackView.swift */; };
+		35EDE3D82699B51400B8E6D9 /* FormButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDE3D72699B51400B8E6D9 /* FormButton.swift */; };
 		35F862AD2691DAE900783C5F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F862AC2691DAE900783C5F /* Constant.swift */; };
 		35F862AF2691DBED00783C5F /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F862AE2691DBED00783C5F /* NetworkSession.swift */; };
 		35F862B12691DDA600783C5F /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F862B02691DDA600783C5F /* NetworkRequest.swift */; };
@@ -74,6 +75,7 @@
 		35E19F252692D774006F3500 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		35EDE3CC26999E9F00B8E6D9 /* RoundTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundTextField.swift; sourceTree = "<group>"; };
 		35EDE3D12699A2AE00B8E6D9 /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
+		35EDE3D72699B51400B8E6D9 /* FormButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormButton.swift; sourceTree = "<group>"; };
 		35F862AC2691DAE900783C5F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		35F862AE2691DBED00783C5F /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
 		35F862B02691DDA600783C5F /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
@@ -157,19 +159,11 @@
 		3531AB6A2692FFFE00243077 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				3531AB74269301C300243077 /* DI */,
-				3531AB6E2693004100243077 /* LoginViewModel.swift */,
-				3531AB702693004600243077 /* LoginViewController.swift */,
-				3531AB722693005300243077 /* LoginCoordinator.swift */,
+				35EDE3D42699ADB300B8E6D9 /* Coordinator */,
+				35EDE3D52699ADBA00B8E6D9 /* View */,
+				35EDE3D32699ADAB00B8E6D9 /* ViewModel */,
 			);
 			path = Login;
-			sourceTree = "<group>";
-		};
-		3531AB74269301C300243077 /* DI */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DI;
 			sourceTree = "<group>";
 		};
 		3531AB792693024100243077 /* Auth */ = {
@@ -260,6 +254,7 @@
 		35EDE3CB26999E7D00B8E6D9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				35EDE3D62699B50C00B8E6D9 /* FormButton */,
 				35EDE3CE26999FCA00B8E6D9 /* RoundTextField */,
 			);
 			path = Components;
@@ -279,6 +274,38 @@
 				35EDE3D12699A2AE00B8E6D9 /* UIStackView.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		35EDE3D32699ADAB00B8E6D9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3531AB6E2693004100243077 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		35EDE3D42699ADB300B8E6D9 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				3531AB722693005300243077 /* LoginCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		35EDE3D52699ADBA00B8E6D9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3531AB702693004600243077 /* LoginViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		35EDE3D62699B50C00B8E6D9 /* FormButton */ = {
+			isa = PBXGroup;
+			children = (
+				35EDE3D72699B51400B8E6D9 /* FormButton.swift */,
+			);
+			path = FormButton;
 			sourceTree = "<group>";
 		};
 		35F862AA2691DAC600783C5F /* Network */ = {
@@ -667,6 +694,7 @@
 				35EDE3CD26999E9F00B8E6D9 /* RoundTextField.swift in Sources */,
 				3531AB6F2693004100243077 /* LoginViewModel.swift in Sources */,
 				35E19F222692D73C006F3500 /* Route.swift in Sources */,
+				35EDE3D82699B51400B8E6D9 /* FormButton.swift in Sources */,
 				35F862B12691DDA600783C5F /* NetworkRequest.swift in Sources */,
 				3531AB7F269345B700243077 /* NextViewController.swift in Sources */,
 				3531AB5D2692FCC000243077 /* BaseCoordinator.swift in Sources */,
