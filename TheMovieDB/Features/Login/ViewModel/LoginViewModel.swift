@@ -10,15 +10,16 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-struct LoginViewModelActions {
-    let showNextView: () -> Void
+protocol LoginViewModelRoute {
+    func showNextView()
 }
 
 final class LoginViewModel {
     private let dispose = DisposeBag()
-    private let actions: LoginViewModelActions
-    init(actions: LoginViewModelActions) {
-        self.actions = actions
+    var route: LoginViewModelRoute
+    
+    init(route: LoginViewModelRoute) {
+        self.route = route
     }
 }
 
@@ -39,7 +40,7 @@ extension LoginViewModel: ViewModel {
         }.asDriver(onErrorJustReturn: false)
         input.loginTapped.withLatestFrom(isFormValid).subscribe(onNext: { [weak self] _ in
             Defaults.setHasLogin(true)
-            self?.actions.showNextView()
+            self?.route.showNextView()
         }).disposed(by: dispose)
         return Output(isLogin: isFormValid)
     }

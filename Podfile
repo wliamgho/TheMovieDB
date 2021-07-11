@@ -11,6 +11,9 @@ def shared_pods
 end
 
 def testing_pods
+  pod 'Quick', '4.0.0'
+  pod 'Nimble', '9.2.0'
+  pod 'SpecLeaks', :git => 'https://github.com/wliam06/specleaks.git', :branch => 'master'
   pod 'RxBlocking', '6.2.0'
   pod 'RxTest', '6.2.0'
 end

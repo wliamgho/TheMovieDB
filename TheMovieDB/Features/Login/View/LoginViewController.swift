@@ -49,9 +49,18 @@ class LoginViewController: UIViewController {
         return button
     }()
 
-    var viewModel: LoginViewModel?
+    private var viewModel: LoginViewModel
     private let dispose = DisposeBag()
 
+    init(viewModel: LoginViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -99,7 +108,7 @@ private extension LoginViewController {
         let input = LoginViewModel.Input(email: emailField.rx.text.orEmpty.asObservable(),
                                          password: passwordField.rx.text.orEmpty.asObservable(),
                                          loginTapped: loginButton.rx.tap.asObservable())
-        let output = viewModel?.transform(input)
-        output?.isLogin.drive(loginButton.rx.isEnabled).disposed(by: dispose)
+        let output = viewModel.transform(input)
+        output.isLogin.drive(loginButton.rx.isEnabled).disposed(by: dispose)
     }
 }
