@@ -14,8 +14,21 @@ protocol LoginViewModelRoute {
     func showNextView()
 }
 
-final class LoginViewModel {
-    private let dispose = DisposeBag()
+protocol LoginViewModelInput: AnyObject {
+    func didLogin(email: Observable<String>,
+                  password: Observable<String>,
+                  loginAction: Observable<Void>)
+}
+protocol LoginViewModelOutput: AnyObject {
+    var isLogin: Driver<Bool> { get }
+}
+
+protocol LoginViewModel: LoginViewModelInput & LoginViewModelOutput {}
+
+final class DefaultLoginViewModel {
+    var isLogin: Driver<Bool> = Driver.just(false)
+
+    private let disposeBag = DisposeBag()
     var route: LoginViewModelRoute
     
     init(route: LoginViewModelRoute) {
@@ -23,25 +36,20 @@ final class LoginViewModel {
     }
 }
 
-extension LoginViewModel: ViewModel {
-    struct Input {
-        let email: Observable<String>
-        let password: Observable<String>
-        let loginTapped: Observable<Void>
-    }
-
-    struct Output {
-        let isLogin: Driver<Bool>
-    }
-
-    func transform(_ input: Input) -> Output {
-        let isFormValid = Observable.combineLatest(input.email, input.password) { (username, password) in
-            return !username.isEmpty && !password.isEmpty
+extension DefaultLoginViewModel: LoginViewModel {
+    func didLogin(email: Observable<String>, password: Observable<String>, loginAction: Observable<Void>) {
+        let isFormValid = Observable.combineLatest(email, password) { (email, password) in
+            return !email.isEmpty && !password.isEmpty
         }.asDriver(onErrorJustReturn: false)
-        input.loginTapped.withLatestFrom(isFormValid).subscribe(onNext: { [weak self] _ in
+
+        // Update is login
+        isLogin = isFormValid
+
+        loginAction.withLatestFrom(isFormValid).subscribe(onNext: { [weak self] _ in
             Defaults.setHasLogin(true)
             self?.route.showNextView()
-        }).disposed(by: dispose)
-        return Output(isLogin: isFormValid)
+        }, onError: { error in
+            print("ERROR", error.localizedDescription)
+        }).disposed(by: disposeBag)
     }
 }

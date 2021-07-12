@@ -15,8 +15,12 @@
 		3531AB712693004600243077 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3531AB702693004600243077 /* LoginViewController.swift */; };
 		3531AB732693005300243077 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3531AB722693005300243077 /* LoginCoordinator.swift */; };
 		3531AB7D2693387B00243077 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3531AB7C2693387B00243077 /* ViewModel.swift */; };
+		3557CDE7269C6F3200E1EA49 /* MockLoginViewModelInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3557CDE6269C6F3200E1EA49 /* MockLoginViewModelInput.swift */; };
+		3557CDE9269C6F4D00E1EA49 /* MockLoginViewModelOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3557CDE8269C6F4D00E1EA49 /* MockLoginViewModelOutput.swift */; };
 		3569E92E2691F4D900C15E80 /* Responsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3569E92D2691F4D900C15E80 /* Responsable.swift */; };
 		3596C64C2699E42C0067D5CB /* Container+ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3596C64B2699E42C0067D5CB /* Container+ViewModels.swift */; };
+		359D59ED269C64BB0019EF29 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D59EC269C64BB0019EF29 /* LoginViewModelTests.swift */; };
+		359D59EF269C651F0019EF29 /* MockLoginViewModelRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D59EE269C651F0019EF29 /* MockLoginViewModelRoute.swift */; };
 		35A658F5269AF37500831AAB /* Container+ViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A658F4269AF37500831AAB /* Container+ViewControllers.swift */; };
 		35A658F7269AF67A00831AAB /* ContainerRegisterDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A658F6269AF67A00831AAB /* ContainerRegisterDependencies.swift */; };
 		35E19F222692D73C006F3500 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E19F212692D73C006F3500 /* Route.swift */; };
@@ -71,8 +75,12 @@
 		3531AB702693004600243077 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3531AB722693005300243077 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		3531AB7C2693387B00243077 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		3557CDE6269C6F3200E1EA49 /* MockLoginViewModelInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginViewModelInput.swift; sourceTree = "<group>"; };
+		3557CDE8269C6F4D00E1EA49 /* MockLoginViewModelOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginViewModelOutput.swift; sourceTree = "<group>"; };
 		3569E92D2691F4D900C15E80 /* Responsable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Responsable.swift; sourceTree = "<group>"; };
 		3596C64B2699E42C0067D5CB /* Container+ViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+ViewModels.swift"; sourceTree = "<group>"; };
+		359D59EC269C64BB0019EF29 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		359D59EE269C651F0019EF29 /* MockLoginViewModelRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginViewModelRoute.swift; sourceTree = "<group>"; };
 		35A658F4269AF37500831AAB /* Container+ViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+ViewControllers.swift"; sourceTree = "<group>"; };
 		35A658F6269AF67A00831AAB /* ContainerRegisterDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerRegisterDependencies.swift; sourceTree = "<group>"; };
 		35E19F212692D73C006F3500 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
@@ -147,13 +155,13 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
-		350DBBE8269AE46A00963FA3 /* Container */ = {
+		350DBBE8269AE46A00963FA3 /* DI */ = {
 			isa = PBXGroup;
 			children = (
 				35A658F6269AF67A00831AAB /* ContainerRegisterDependencies.swift */,
 				350DBBE9269AE4A300963FA3 /* Container+RegisterDependenciesLeakTests.swift */,
 			);
-			path = Container;
+			path = DI;
 			sourceTree = "<group>";
 		};
 		3531AB592692FC7100243077 /* Coordinator */ = {
@@ -182,6 +190,16 @@
 				35EDE3D32699ADAB00B8E6D9 /* ViewModel */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		3557CDE3269C684B00E1EA49 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				359D59EE269C651F0019EF29 /* MockLoginViewModelRoute.swift */,
+				3557CDE6269C6F3200E1EA49 /* MockLoginViewModelInput.swift */,
+				3557CDE8269C6F4D00E1EA49 /* MockLoginViewModelOutput.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 		3569E9202691F42500C15E80 /* DI */ = {
@@ -230,19 +248,21 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
-		3569E9272691F48F00C15E80 /* DI */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DI;
-			sourceTree = "<group>";
-		};
 		3569E92C2691F4C800C15E80 /* Responsable */ = {
 			isa = PBXGroup;
 			children = (
 				3569E92D2691F4D900C15E80 /* Responsable.swift */,
 			);
 			path = Responsable;
+			sourceTree = "<group>";
+		};
+		359D59EB269C64A20019EF29 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				3557CDE3269C684B00E1EA49 /* Mock */,
+				359D59EC269C64BB0019EF29 /* LoginViewModelTests.swift */,
+			);
+			path = Features;
 			sourceTree = "<group>";
 		};
 		35E19F202692D715006F3500 /* Route */ = {
@@ -339,7 +359,6 @@
 		35F862AA2691DAC600783C5F /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				3569E9272691F48F00C15E80 /* DI */,
 				3569E92C2691F4C800C15E80 /* Responsable */,
 				3569E9262691F46A00C15E80 /* Request */,
 				3569E9252691F46000C15E80 /* Session */,
@@ -409,7 +428,8 @@
 		3D70FC57251F742F007C5AB9 /* TheMovieDBTests */ = {
 			isa = PBXGroup;
 			children = (
-				350DBBE8269AE46A00963FA3 /* Container */,
+				359D59EB269C64A20019EF29 /* Features */,
+				350DBBE8269AE46A00963FA3 /* DI */,
 				3D70FC58251F742F007C5AB9 /* TheMovieDBTests.swift */,
 				3D70FC5A251F742F007C5AB9 /* Info.plist */,
 			);
@@ -737,9 +757,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				359D59ED269C64BB0019EF29 /* LoginViewModelTests.swift in Sources */,
+				3557CDE9269C6F4D00E1EA49 /* MockLoginViewModelOutput.swift in Sources */,
 				3D70FC59251F742F007C5AB9 /* TheMovieDBTests.swift in Sources */,
 				35A658F7269AF67A00831AAB /* ContainerRegisterDependencies.swift in Sources */,
+				3557CDE7269C6F3200E1EA49 /* MockLoginViewModelInput.swift in Sources */,
 				350DBBEA269AE4A300963FA3 /* Container+RegisterDependenciesLeakTests.swift in Sources */,
+				359D59EF269C651F0019EF29 /* MockLoginViewModelRoute.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,8 +18,9 @@ class LoginCoordinator: BaseCoordinator {
     }
 
     override func start() {
-        let viewModel = LoginViewModel(route: self)
+        let viewModel = DefaultLoginViewModel(route: self)
         let vc = LoginViewController(viewModel: viewModel)
+        vc.viewModel = viewModel
         route.setRootModule(vc.createModule())
     }
 }

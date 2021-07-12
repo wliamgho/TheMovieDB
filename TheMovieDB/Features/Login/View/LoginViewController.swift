@@ -49,8 +49,8 @@ class LoginViewController: UIViewController {
         return button
     }()
 
-    private var viewModel: LoginViewModel
-    private let dispose = DisposeBag()
+    var viewModel: LoginViewModel?
+    private let disposeBag = DisposeBag()
 
     init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
@@ -105,10 +105,9 @@ private extension LoginViewController {
     }
 
     private func bindViewModel() {
-        let input = LoginViewModel.Input(email: emailField.rx.text.orEmpty.asObservable(),
-                                         password: passwordField.rx.text.orEmpty.asObservable(),
-                                         loginTapped: loginButton.rx.tap.asObservable())
-        let output = viewModel.transform(input)
-        output.isLogin.drive(loginButton.rx.isEnabled).disposed(by: dispose)
+        viewModel?.didLogin(email: emailField.rx.text.orEmpty.asObservable(),
+                            password: passwordField.rx.text.orEmpty.asObservable(),
+                            loginAction: loginButton.rx.tap.asObservable())
+        viewModel?.isLogin.drive(loginButton.rx.isEnabled).disposed(by: disposeBag)
     }
 }
