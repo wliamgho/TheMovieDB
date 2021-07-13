@@ -14,14 +14,14 @@ import RxBlocking
 @testable import TheMovieDB
 class LoginViewModelTests: XCTestCase {
     var disposeBag: DisposeBag!
-    var viewModel: LoginViewModel!
+    var viewModel: MockLoginViewModel!
     var scheduler: ConcurrentDispatchQueueScheduler!
     var mockScheduler: TestScheduler!
 
     override func setUp() {
         super.setUp()
         disposeBag = DisposeBag()
-        viewModel = DefaultLoginViewModel(route: MockLoginViewModelRoute())
+        viewModel = MockLoginViewModel()
         scheduler = ConcurrentDispatchQueueScheduler(qos: .default)
         mockScheduler = TestScheduler(initialClock: 0)
     }

@@ -1,5 +1,5 @@
 //
-//  MockLoginViewModelInput.swift
+//  MockLoginViewModel.swift
 //  TheMovieDBTests
 //
 //  Created by William on 12/07/21.
@@ -8,10 +8,23 @@
 
 import XCTest
 import RxSwift
+import RxCocoa
 
 @testable import TheMovieDB
 
-class MockLoginViewModelInput: LoginViewModelInput {
+class MockLoginViewModel: LoginViewModel {
+    // Output
+    var invokedIsLoginGetter = false
+    var invokedIsLoginGetterCount = 0
+    var stubbedIsLogin: Driver<Bool>!
+
+    var isLogin: Driver<Bool> {
+        invokedIsLoginGetter = true
+        invokedIsLoginGetterCount += 1
+        return stubbedIsLogin
+    }
+
+    // Input
     var invokedDidLogin = false
     var invokedDidLoginCount = 0
     var invokedDidLoginParameters: (email: Observable<String>, password: Observable<String>, loginAction: Observable<Void>)?
