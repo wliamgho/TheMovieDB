@@ -7,16 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		350DBBEA269AE4A300963FA3 /* Container+RegisterDependenciesLeakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350DBBE9269AE4A300963FA3 /* Container+RegisterDependenciesLeakTests.swift */; };
 		3531AB582692FC4200243077 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3531AB572692FC4200243077 /* AppCoordinator.swift */; };
 		3531AB5B2692FCB100243077 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3531AB5A2692FCB100243077 /* Coordinator.swift */; };
 		3531AB5D2692FCC000243077 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3531AB5C2692FCC000243077 /* BaseCoordinator.swift */; };
-		3531AB6F2693004100243077 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3531AB6E2693004100243077 /* LoginViewModel.swift */; };
+		3531AB6F2693004100243077 /* DefaultLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3531AB6E2693004100243077 /* DefaultLoginViewModel.swift */; };
 		3531AB712693004600243077 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3531AB702693004600243077 /* LoginViewController.swift */; };
 		3531AB732693005300243077 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3531AB722693005300243077 /* LoginCoordinator.swift */; };
 		3531AB7D2693387B00243077 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3531AB7C2693387B00243077 /* ViewModel.swift */; };
-		3531AB7F269345B700243077 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3531AB7E269345B700243077 /* NextViewController.swift */; };
+		3557CDEB269C720F00E1EA49 /* MockLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3557CDEA269C720F00E1EA49 /* MockLoginViewModel.swift */; };
 		3569E92E2691F4D900C15E80 /* Responsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3569E92D2691F4D900C15E80 /* Responsable.swift */; };
 		3596C64C2699E42C0067D5CB /* Container+ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3596C64B2699E42C0067D5CB /* Container+ViewModels.swift */; };
+		359CEEBE269D669900A62436 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359CEEBD269D669900A62436 /* LoginViewModel.swift */; };
+		359D59ED269C64BB0019EF29 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D59EC269C64BB0019EF29 /* LoginViewModelTests.swift */; };
+		359D59EF269C651F0019EF29 /* MockLoginViewModelRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D59EE269C651F0019EF29 /* MockLoginViewModelRoute.swift */; };
+		35A658F5269AF37500831AAB /* Container+ViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A658F4269AF37500831AAB /* Container+ViewControllers.swift */; };
+		35A658F7269AF67A00831AAB /* ContainerRegisterDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A658F6269AF67A00831AAB /* ContainerRegisterDependencies.swift */; };
 		35E19F222692D73C006F3500 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E19F212692D73C006F3500 /* Route.swift */; };
 		35E19F242692D758006F3500 /* NavigationRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E19F232692D758006F3500 /* NavigationRoute.swift */; };
 		35E19F262692D774006F3500 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E19F252692D774006F3500 /* Log.swift */; };
@@ -61,16 +67,22 @@
 
 /* Begin PBXFileReference section */
 		2E989F13902F0C3BF74360C3 /* Pods_TheMovieDBTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheMovieDBTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		350DBBE9269AE4A300963FA3 /* Container+RegisterDependenciesLeakTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+RegisterDependenciesLeakTests.swift"; sourceTree = "<group>"; };
 		3531AB572692FC4200243077 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		3531AB5A2692FCB100243077 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		3531AB5C2692FCC000243077 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
-		3531AB6E2693004100243077 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		3531AB6E2693004100243077 /* DefaultLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLoginViewModel.swift; sourceTree = "<group>"; };
 		3531AB702693004600243077 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3531AB722693005300243077 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		3531AB7C2693387B00243077 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		3531AB7E269345B700243077 /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
+		3557CDEA269C720F00E1EA49 /* MockLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginViewModel.swift; sourceTree = "<group>"; };
 		3569E92D2691F4D900C15E80 /* Responsable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Responsable.swift; sourceTree = "<group>"; };
 		3596C64B2699E42C0067D5CB /* Container+ViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+ViewModels.swift"; sourceTree = "<group>"; };
+		359CEEBD269D669900A62436 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		359D59EC269C64BB0019EF29 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		359D59EE269C651F0019EF29 /* MockLoginViewModelRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginViewModelRoute.swift; sourceTree = "<group>"; };
+		35A658F4269AF37500831AAB /* Container+ViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+ViewControllers.swift"; sourceTree = "<group>"; };
+		35A658F6269AF67A00831AAB /* ContainerRegisterDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerRegisterDependencies.swift; sourceTree = "<group>"; };
 		35E19F212692D73C006F3500 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		35E19F232692D758006F3500 /* NavigationRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRoute.swift; sourceTree = "<group>"; };
 		35E19F252692D774006F3500 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
@@ -135,6 +147,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		350DBBE4269ABFB600963FA3 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				35EDE3DC2699D5C300B8E6D9 /* TabBarCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		350DBBE8269AE46A00963FA3 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				35A658F6269AF67A00831AAB /* ContainerRegisterDependencies.swift */,
+				350DBBE9269AE4A300963FA3 /* Container+RegisterDependenciesLeakTests.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 		3531AB592692FC7100243077 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,7 +178,6 @@
 			children = (
 				35EDE3D92699D56600B8E6D9 /* TabBar */,
 				3531AB6A2692FFFE00243077 /* Login */,
-				3531AB7E269345B700243077 /* NextViewController.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -164,12 +192,22 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		3557CDE3269C684B00E1EA49 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				359D59EE269C651F0019EF29 /* MockLoginViewModelRoute.swift */,
+				3557CDEA269C720F00E1EA49 /* MockLoginViewModel.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		3569E9202691F42500C15E80 /* DI */ = {
 			isa = PBXGroup;
 			children = (
 				35EDE3DE2699D7E300B8E6D9 /* Container+RegisterDepedencies.swift */,
 				35EDE3E62699DD6700B8E6D9 /* Container+Coordinator.swift */,
 				3596C64B2699E42C0067D5CB /* Container+ViewModels.swift */,
+				35A658F4269AF37500831AAB /* Container+ViewControllers.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -209,19 +247,21 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
-		3569E9272691F48F00C15E80 /* DI */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DI;
-			sourceTree = "<group>";
-		};
 		3569E92C2691F4C800C15E80 /* Responsable */ = {
 			isa = PBXGroup;
 			children = (
 				3569E92D2691F4D900C15E80 /* Responsable.swift */,
 			);
 			path = Responsable;
+			sourceTree = "<group>";
+		};
+		359D59EB269C64A20019EF29 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				3557CDE3269C684B00E1EA49 /* Mock */,
+				359D59EC269C64BB0019EF29 /* LoginViewModelTests.swift */,
+			);
+			path = Features;
 			sourceTree = "<group>";
 		};
 		35E19F202692D715006F3500 /* Route */ = {
@@ -261,7 +301,8 @@
 		35EDE3D32699ADAB00B8E6D9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				3531AB6E2693004100243077 /* LoginViewModel.swift */,
+				3531AB6E2693004100243077 /* DefaultLoginViewModel.swift */,
+				359CEEBD269D669900A62436 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -293,8 +334,8 @@
 		35EDE3D92699D56600B8E6D9 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				350DBBE4269ABFB600963FA3 /* Coordinator */,
 				35EDE3DA2699D56C00B8E6D9 /* TabBarController.swift */,
-				35EDE3DC2699D5C300B8E6D9 /* TabBarCoordinator.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -318,7 +359,6 @@
 		35F862AA2691DAC600783C5F /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				3569E9272691F48F00C15E80 /* DI */,
 				3569E92C2691F4C800C15E80 /* Responsable */,
 				3569E9262691F46A00C15E80 /* Request */,
 				3569E9252691F46000C15E80 /* Session */,
@@ -388,6 +428,8 @@
 		3D70FC57251F742F007C5AB9 /* TheMovieDBTests */ = {
 			isa = PBXGroup;
 			children = (
+				359D59EB269C64A20019EF29 /* Features */,
+				350DBBE8269AE46A00963FA3 /* DI */,
 				3D70FC58251F742F007C5AB9 /* TheMovieDBTests.swift */,
 				3D70FC5A251F742F007C5AB9 /* Info.plist */,
 			);
@@ -690,17 +732,18 @@
 				35F862B42691E08C00783C5F /* Latest.swift in Sources */,
 				35EDE3E72699DD6700B8E6D9 /* Container+Coordinator.swift in Sources */,
 				35E19F242692D758006F3500 /* NavigationRoute.swift in Sources */,
+				359CEEBE269D669900A62436 /* LoginViewModel.swift in Sources */,
 				3531AB7D2693387B00243077 /* ViewModel.swift in Sources */,
 				35EDE3DF2699D7E300B8E6D9 /* Container+RegisterDepedencies.swift in Sources */,
 				35EDE3DB2699D56C00B8E6D9 /* TabBarController.swift in Sources */,
 				35E19F262692D774006F3500 /* Log.swift in Sources */,
 				35EDE3CD26999E9F00B8E6D9 /* RoundTextField.swift in Sources */,
-				3531AB6F2693004100243077 /* LoginViewModel.swift in Sources */,
+				3531AB6F2693004100243077 /* DefaultLoginViewModel.swift in Sources */,
 				35E19F222692D73C006F3500 /* Route.swift in Sources */,
 				35EDE3D82699B51400B8E6D9 /* FormButton.swift in Sources */,
 				35F862B12691DDA600783C5F /* NetworkRequest.swift in Sources */,
-				3531AB7F269345B700243077 /* NextViewController.swift in Sources */,
 				3531AB5D2692FCC000243077 /* BaseCoordinator.swift in Sources */,
+				35A658F5269AF37500831AAB /* Container+ViewControllers.swift in Sources */,
 				3D70FC41251F742C007C5AB9 /* AppDelegate.swift in Sources */,
 				3531AB582692FC4200243077 /* AppCoordinator.swift in Sources */,
 				3596C64C2699E42C0067D5CB /* Container+ViewModels.swift in Sources */,
@@ -715,7 +758,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				359D59ED269C64BB0019EF29 /* LoginViewModelTests.swift in Sources */,
+				3557CDEB269C720F00E1EA49 /* MockLoginViewModel.swift in Sources */,
 				3D70FC59251F742F007C5AB9 /* TheMovieDBTests.swift in Sources */,
+				35A658F7269AF67A00831AAB /* ContainerRegisterDependencies.swift in Sources */,
+				350DBBEA269AE4A300963FA3 /* Container+RegisterDependenciesLeakTests.swift in Sources */,
+				359D59EF269C651F0019EF29 /* MockLoginViewModelRoute.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -876,6 +924,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = BY8P5XC76R;
 				INFOPLIST_FILE = TheMovieDB/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -895,6 +944,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = BY8P5XC76R;
 				INFOPLIST_FILE = TheMovieDB/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -915,6 +965,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = BY8P5XC76R;
 				INFOPLIST_FILE = TheMovieDBTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -937,6 +988,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = BY8P5XC76R;
 				INFOPLIST_FILE = TheMovieDBTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

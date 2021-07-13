@@ -14,6 +14,8 @@ extension Container {
         // Register service
         // Register Coordinator
         registerCoodinators()
+        // Register ViewController
+        registerViewControllers()
         // Register ViewModel
         registerViewModels()
     }

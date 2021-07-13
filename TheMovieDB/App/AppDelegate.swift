@@ -22,10 +22,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 }
-
-// MARK: - Inject Properties
-extension AppDelegate {
-    func injectProperties(_ window: UIWindow) {
-        self.window = window
-    }
-}

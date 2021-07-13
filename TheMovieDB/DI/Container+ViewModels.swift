@@ -10,7 +10,9 @@ import Swinject
 
 extension Container {
     func registerViewModels() {
-        autoregister(LoginViewModel.self, initializer: 
-                        LoginViewModel.init)
+        register(LoginViewModel.self) { r in
+            let vm = DefaultLoginViewModel(route: r.resolve(LoginViewModelRoute.self)!)
+            return vm
+        }
     }
 }

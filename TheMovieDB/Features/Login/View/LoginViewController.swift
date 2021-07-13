@@ -50,8 +50,17 @@ class LoginViewController: UIViewController {
     }()
 
     var viewModel: LoginViewModel?
-    private let dispose = DisposeBag()
+    private let disposeBag = DisposeBag()
 
+    init(viewModel: LoginViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -96,10 +105,9 @@ private extension LoginViewController {
     }
 
     private func bindViewModel() {
-        let input = LoginViewModel.Input(email: emailField.rx.text.orEmpty.asObservable(),
-                                         password: passwordField.rx.text.orEmpty.asObservable(),
-                                         loginTapped: loginButton.rx.tap.asObservable())
-        let output = viewModel?.transform(input)
-        output?.isLogin.drive(loginButton.rx.isEnabled).disposed(by: dispose)
+        viewModel?.didLogin(email: emailField.rx.text.orEmpty.asObservable(),
+                            password: passwordField.rx.text.orEmpty.asObservable(),
+                            loginAction: loginButton.rx.tap.asObservable())
+        viewModel?.isLogin.drive(loginButton.rx.isEnabled).disposed(by: disposeBag)
     }
 }

@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (5.4.0)
+  - Nimble (9.2.0)
+  - Quick (4.0.0)
   - RxBlocking (6.2.0):
     - RxSwift (= 6.2.0)
   - RxCocoa (6.2.0):
@@ -10,22 +12,30 @@ PODS:
   - RxSwift (6.2.0)
   - RxTest (6.2.0):
     - RxSwift (= 6.2.0)
+  - SpecLeaks (0.1.9):
+    - Nimble (= 9.2.0)
+    - Quick (= 4.0.0)
   - Swinject (2.7.0)
   - SwinjectAutoregistration (2.7.0):
     - Swinject (~> 2.7)
 
 DEPENDENCIES:
   - Alamofire (= 5.4)
+  - Nimble (= 9.2.0)
+  - Quick (= 4.0.0)
   - RxBlocking (= 6.2.0)
   - RxCocoa (= 6.2.0)
   - RxSwift (= 6.2.0)
   - RxTest (= 6.2.0)
+  - SpecLeaks (from `https://github.com/wliam06/specleaks.git`, branch `master`)
   - Swinject (= 2.7.0)
   - SwinjectAutoregistration (= 2.7.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Nimble
+    - Quick
     - RxBlocking
     - RxCocoa
     - RxRelay
@@ -34,16 +44,29 @@ SPEC REPOS:
     - Swinject
     - SwinjectAutoregistration
 
+EXTERNAL SOURCES:
+  SpecLeaks:
+    :branch: master
+    :git: https://github.com/wliam06/specleaks.git
+
+CHECKOUT OPTIONS:
+  SpecLeaks:
+    :commit: a538aa5cb857e2d86d555ca309113eecbf979b0f
+    :git: https://github.com/wliam06/specleaks.git
+
 SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
+  Nimble: 4f4a345c80b503b3ea13606a4f98405974ee4d0b
+  Quick: 6473349e43b9271a8d43839d9ba1c442ed1b7ac4
   RxBlocking: 0b29f7d2079109a8de49c411381bed7c33ef1eeb
   RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
   RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
   RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
   RxTest: 0c692fa672b694373ba86d2b00033595297a2831
+  SpecLeaks: ba38b0fa325bce10e3e98ddaa43e5cad29d0ef88
   Swinject: 18195e17ad6140f994e95e11c7b04b21410598e8
   SwinjectAutoregistration: 330f5012642a8b5c89a8a4adb0c5e52df07382c0
 
-PODFILE CHECKSUM: 01558fbe9938b93214b71cc2982e52a0f53e45d7
+PODFILE CHECKSUM: 3429c50c04b29b493c4a40aaa1b789a05f6c23d1
 
 COCOAPODS: 1.10.1
