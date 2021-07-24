@@ -10,31 +10,60 @@ import XCTest
 import RxSwift
 import RxTest
 import RxBlocking
+import Nimble
+import Quick
 
 @testable import TheMovieDB
-class LoginViewModelTests: XCTestCase {
+class LoginViewModelTests: QuickSpec {
+    var sut: LoginViewModel!
     var disposeBag: DisposeBag!
-    var viewModel: MockLoginViewModel!
-    var scheduler: ConcurrentDispatchQueueScheduler!
-    var mockScheduler: TestScheduler!
+    var scheduler: TestScheduler!
 
-    override func setUp() {
-        super.setUp()
-        disposeBag = DisposeBag()
-        viewModel = MockLoginViewModel()
-        scheduler = ConcurrentDispatchQueueScheduler(qos: .default)
-        mockScheduler = TestScheduler(initialClock: 0)
+    override func spec() {
+        beforeEach {
+            self.sut = LoginViewModel(route: MockLoginViewModelRoute())
+            self.scheduler = TestScheduler(initialClock: 0)
+            self.disposeBag = DisposeBag()
+        }
+
+        afterEach {
+            self.sut = nil
+        }
+    
+        describe("Observe LoginForm") {
+            describe("success") {
+                it("IsEnabledLogin") {
+                    let emailTrigger = Observable<String>.just("email")
+                    let passwordTrigger = Observable<String>.just("password")
+                    let loginAction = Observable<Void>.just(())
+                    let output = self.sut.transform(self.createInput(emailTrigger: emailTrigger,
+                                                                     passwordTrigger: passwordTrigger,
+                                                                     loginAction: loginAction))
+                    output.isLogin.drive().disposed(by: self.disposeBag)
+                    let isEnabled = try! output.isLogin.toBlocking().first()
+                    expect(isEnabled) == true
+                }
+            }
+
+            describe("invalid") {
+                it("DisabledLogin") {
+                    let emailTrigger = Observable<String>.just("email")
+                    let loginAction = Observable<Void>.just(())
+                    let output = self.sut.transform(self.createInput(emailTrigger: emailTrigger,
+                                                                     loginAction: loginAction))
+                    output.isLogin.drive().disposed(by: self.disposeBag)
+                    let isEnabled = try! output.isLogin.toBlocking().first()
+                    expect(isEnabled) == false
+                }
+            }
+        }
     }
 
-    override func tearDown() {
-        disposeBag = nil
-        viewModel = nil
-        scheduler = nil
-        mockScheduler = nil
-        super.tearDown()
-    }
-
-    func test_loginButtonEnabled() {
-        let enabled = mockScheduler.createObserver(Bool.self)
+    func createInput(emailTrigger: Observable<String> = Observable.just(""),
+                     passwordTrigger: Observable<String> = Observable.just(""),
+                     loginAction: Observable<Void> = Observable.just(())) -> LoginViewModel.Input {
+        return LoginViewModel.Input(email: emailTrigger,
+                                    password: passwordTrigger,
+                                    loginAction: loginAction)
     }
 }

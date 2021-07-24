@@ -1,16 +1,13 @@
 //
-//  ViewModelType.swift
+//  ViewModel.swift
 //  TheMovieDB
 //
-//  Created by William on 05/07/21.
+//  Created by William on 24/07/21.
 //  Copyright © 2021 william. All rights reserved.
 //
 
 import Foundation
 
-protocol ViewModel {
-    associatedtype Input
-    associatedtype Output
-
-    func transform(_ input: Input) -> Output
+class ViewModel: NSObject {
+    
 }
