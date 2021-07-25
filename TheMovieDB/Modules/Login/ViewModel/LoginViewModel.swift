@@ -14,41 +14,42 @@ protocol LoginViewModelRoute: AnyObject {
     func showNextView()
 }
 
-class LoginViewModel: ViewModel {
-    private let disposeBag = DisposeBag()
-    var route: LoginViewModelRoute
-
-    let loginTapped: PublishSubject<Void> = .init()
-    
-    init(route: LoginViewModelRoute) {
-        self.route = route
-    }
-}
-
-extension LoginViewModel: ViewModelType {
+class LoginViewModel: ViewModel, ViewModelType {
     struct Input {
-        let email: Observable<String>
-        let password: Observable<String>
-        let loginAction: Observable<Void>
+        let email: AnyObserver<String>
+        let password: AnyObserver<String>
+        let loginAction: AnyObserver<Void>
     }
-    
+
     struct Output {
         var isLogin: Driver<Bool>
     }
 
-    func transform(_ input: Input) -> Output {
-        let isValidForm = Observable.combineLatest(input.email, input.password) { (email, password) in
+    var input: Input!
+    var output: Output!
+
+    private let disposeBag = DisposeBag()
+    var route: LoginViewModelRoute
+
+    private let email = BehaviorSubject<String>.init(value: "")
+    private let password = BehaviorSubject<String>.init(value: "")
+    private let loginTapped: PublishSubject<Void> = .init()
+
+    init(route: LoginViewModelRoute) {
+        self.route = route
+
+        super.init()
+
+        input = Input(email: email.asObserver(),
+                      password: password.asObserver(),
+                      loginAction: loginTapped.asObserver())
+
+        output = Output(isLogin: loginEnabled())
+    }
+
+    private func loginEnabled() -> Driver<Bool> {
+        Observable.combineLatest(email, password) { (email, password) in
             return !email.isEmpty && !password.isEmpty
         }.asDriver(onErrorJustReturn: false)
-
-        input.loginAction.withLatestFrom(isValidForm).subscribe(onNext: { [weak self] _ in
-            Defaults.setHasLogin(true)
-            self?.route.showNextView()
-        }, onError: { error in
-            // TODO: Show as Alert
-            Log.info(error.localizedDescription)
-        }).disposed(by: disposeBag)
-
-        return Output(isLogin: isValidForm)
     }
 }

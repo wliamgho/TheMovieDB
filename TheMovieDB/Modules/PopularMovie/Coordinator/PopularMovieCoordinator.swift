@@ -16,7 +16,7 @@ class PopularMovieCoordinator: BaseCoordinator {
     }
 
     override func start() {
-        let viewModel = DefaultPopularViewModel()
+        let viewModel = PopularMovieViewModel()
         let vc = PopularMovieViewController(viewModel: viewModel)
         route.setRootModule(vc)
     }

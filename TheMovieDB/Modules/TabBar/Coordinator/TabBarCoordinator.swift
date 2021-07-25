@@ -16,10 +16,6 @@ class TabBarBarCoordinator: BaseCoordinator {
     }
 
     override func start() {
-//        let viewModel = DefaultLoginViewModel(route: self)
-//        let vc = LoginViewController(viewModel: viewModel)
-//        vc.viewModel = viewModel
-//        route.setRootModule(vc.createModule())
         let tabView = TabBarController()
         route.setRootModule(tabView, hideBar: false)
     }

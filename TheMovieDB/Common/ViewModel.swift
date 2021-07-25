@@ -9,5 +9,7 @@
 import Foundation
 
 class ViewModel: NSObject {
-    
+    override init() {
+        super.init()
+    }
 }

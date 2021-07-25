@@ -28,42 +28,55 @@ class LoginViewModelTests: QuickSpec {
 
         afterEach {
             self.sut = nil
+            self.scheduler = nil
+            self.disposeBag = nil
         }
     
         describe("Observe LoginForm") {
-            describe("success") {
-                it("IsEnabledLogin") {
-                    let emailTrigger = Observable<String>.just("email")
-                    let passwordTrigger = Observable<String>.just("password")
-                    let loginAction = Observable<Void>.just(())
-                    let output = self.sut.transform(self.createInput(emailTrigger: emailTrigger,
-                                                                     passwordTrigger: passwordTrigger,
-                                                                     loginAction: loginAction))
-                    output.isLogin.drive().disposed(by: self.disposeBag)
-                    let isEnabled = try! output.isLogin.toBlocking().first()
-                    expect(isEnabled) == true
+            context("empty email") {
+                it("disabled login") {
+                    // mock observer
+                    let isEnabled = self.scheduler.createObserver(Bool.self)
+                    // inject input
+                    self.sut.input.password.onNext("test")
+                    // inject output
+                    self.sut.output.isLogin.drive(isEnabled).disposed(by: self.disposeBag)
+                    self.simulateTap(at: 10)
+                    // trigger scheduler
+                    self.scheduler.start()
+                    expect(isEnabled.events).to(equal([.next(0, false)]))
                 }
             }
 
-            describe("invalid") {
-                it("DisabledLogin") {
-                    let emailTrigger = Observable<String>.just("email")
-                    let loginAction = Observable<Void>.just(())
-                    let output = self.sut.transform(self.createInput(emailTrigger: emailTrigger,
-                                                                     loginAction: loginAction))
-                    output.isLogin.drive().disposed(by: self.disposeBag)
-                    let isEnabled = try! output.isLogin.toBlocking().first()
-                    expect(isEnabled) == false
+            context("empty password") {
+                it("disabled login") {
+                    let isEnabled = self.scheduler.createObserver(Bool.self)
+                    self.sut.input.email.onNext("test")
+                    self.sut.output.isLogin.drive(isEnabled).disposed(by: self.disposeBag)
+                    self.simulateTap(at: 10)
+                    self.scheduler.start()
+                    expect(isEnabled.events).to(equal([.next(0, false)]))
+                }
+            }
+
+            context("fullfill email password") {
+                it("success") {
+                    let isEnabled = self.scheduler.createObserver(Bool.self)
+                    self.sut.input.email.onNext("email")
+                    self.sut.input.password.onNext("password")
+                    self.sut.output.isLogin.drive(isEnabled).disposed(by: self.disposeBag)
+                    self.simulateTap(at: 10)
+                    self.scheduler.start()
+                    expect(isEnabled.events).to(equal([.next(0, true)]))
                 }
             }
         }
     }
 
-    func createInput(emailTrigger: Observable<String> = Observable.just(""),
-                     passwordTrigger: Observable<String> = Observable.just(""),
-                     loginAction: Observable<Void> = Observable.just(())) -> LoginViewModel.Input {
-        return LoginViewModel.Input(email: emailTrigger,
-                                    password: passwordTrigger,
-                                    loginAction: loginAction)
+    func simulateTap(at times: Int...) {
+        // Test Scheduler to emit event
+        let events: [Recorded<Event<Void>>] = times.map { Recorded.next($0, ()) }
+        let taps = scheduler.createHotObservable(events)
+        taps.bind(to: sut.input.loginAction).disposed(by: disposeBag)
     }
 }

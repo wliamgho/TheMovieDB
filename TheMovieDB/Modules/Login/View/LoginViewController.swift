@@ -79,11 +79,11 @@ class LoginViewController: ViewController {
     }
 
     override func bindViewModel() {
-        let input = LoginViewModel.Input(email: emailField.rx.text.orEmpty.asObservable(),
-                                         password: passwordField.rx.text.orEmpty.asObservable(),
-                                         loginAction: loginButton.rx.tap.asObservable())
-        let output = viewModel.transform(input)
-        output.isLogin.drive(loginButton.rx.isEnabled).disposed(by: disposeBag)
+        emailField.rx.text.orEmpty.bind(to: viewModel.input.email).disposed(by: disposeBag)
+        passwordField.rx.text.orEmpty.bind(to: viewModel.input.password).disposed(by: disposeBag)
+        loginButton.rx.tap.bind(to: viewModel.input.loginAction).disposed(by: disposeBag)
+
+        viewModel.output.isLogin.drive(loginButton.rx.isEnabled).disposed(by: disposeBag)
     }
 
     private func setupConstraint() {

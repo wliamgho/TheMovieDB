@@ -8,9 +8,11 @@
 
 import Foundation
 
-class DefaultPopularViewModel {
+class PopularMovieViewModel: ViewModel, ViewModelType {
+    struct Input {}
+    struct Output {}
+
+    var input: Input!
+    var output: Output!
 }
 
-extension DefaultPopularViewModel: PopularMovieViewModel {
-    
-}
