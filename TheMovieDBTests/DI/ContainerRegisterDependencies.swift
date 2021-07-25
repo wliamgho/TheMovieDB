@@ -30,9 +30,10 @@ extension Container_RegisterDependenciesTests {
                                initializer: LoginCoordinator.init)
         // ViewModel
         container.register(LoginViewModel.self) { r in
-            let vm = DefaultLoginViewModel(route: r.resolve(LoginViewModelRoute.self)!)
+            let vm = LoginViewModel(route: r.resolve(LoginViewModelRoute.self)!)
             return vm
         }
+        container.autoregister(ViewModel.self, initializer: LoginViewModel.init)
         // ViewController
         container.autoregister(LoginViewController.self,
                                initializer: LoginViewController.init)

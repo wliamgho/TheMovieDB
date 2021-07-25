@@ -18,7 +18,7 @@ class LoginCoordinator: BaseCoordinator {
     }
 
     override func start() {
-        let viewModel = DefaultLoginViewModel(route: self)
+        let viewModel = LoginViewModel(route: self)
         let vc = LoginViewController(viewModel: viewModel)
         vc.viewModel = viewModel
         route.setRootModule(vc.createModule())
@@ -28,6 +28,5 @@ class LoginCoordinator: BaseCoordinator {
 extension LoginCoordinator: LoginViewModelRoute {
     func showNextView() {
         finishFlow?()
-        print("GO TO")
     }
 }

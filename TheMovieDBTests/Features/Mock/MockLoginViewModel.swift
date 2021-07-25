@@ -13,6 +13,7 @@ import RxCocoa
 @testable import TheMovieDB
 
 class MockLoginViewModel: LoginViewModel {
+    
     // Output
     var invokedIsLoginGetter = false
     var invokedIsLoginGetterCount = 0

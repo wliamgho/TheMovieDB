@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class LoginViewController: UIViewController {
+class LoginViewController: ViewController {
     private lazy var headerTitle: UILabel = {
         let label = UILabel()
         label.text = "Login Authorization"
@@ -49,12 +49,12 @@ class LoginViewController: UIViewController {
         return button
     }()
 
-    var viewModel: LoginViewModel?
-    private let disposeBag = DisposeBag()
+    var viewModel: LoginViewModel
 
-    init(viewModel: LoginViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
+    init(viewModel: ViewModel) {
+        self.viewModel = viewModel as! LoginViewModel
+
+        super.init()
     }
 
     required init?(coder: NSCoder) {
@@ -67,22 +67,23 @@ class LoginViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        setupUI()
-        setupConstraint()
-        bindViewModel()
-    }
-}
-
-private extension LoginViewController {
-    private func setupUI() {
+    override func setupUI() {
         self.view.backgroundColor = .white
         self.view.addSubview(headerTitle)
         self.view.addSubview(stackView)
         stackView.addArrangedSubviews(emailField, passwordField, loginButton)
         stackView.setCustomSpacing(24, after: passwordField)
+
+        // Set Constraints
+        setupConstraint()
+    }
+
+    override func bindViewModel() {
+        emailField.rx.text.orEmpty.bind(to: viewModel.input.email).disposed(by: disposeBag)
+        passwordField.rx.text.orEmpty.bind(to: viewModel.input.password).disposed(by: disposeBag)
+        loginButton.rx.tap.bind(to: viewModel.input.loginAction).disposed(by: disposeBag)
+
+        viewModel.output.isLogin.drive(loginButton.rx.isEnabled).disposed(by: disposeBag)
     }
 
     private func setupConstraint() {
@@ -102,12 +103,5 @@ private extension LoginViewController {
             // LoginButton
             loginButton.heightAnchor.constraint(equalToConstant: 50)
         ])
-    }
-
-    private func bindViewModel() {
-        viewModel?.didLogin(email: emailField.rx.text.orEmpty.asObservable(),
-                            password: passwordField.rx.text.orEmpty.asObservable(),
-                            loginAction: loginButton.rx.tap.asObservable())
-        viewModel?.isLogin.drive(loginButton.rx.isEnabled).disposed(by: disposeBag)
     }
 }

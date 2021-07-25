@@ -31,14 +31,18 @@ class AppCoordinator: BaseCoordinator {
     }
 
     private func showTabFlow() {
-        
+        let coordinator = AppDelegate.container.resolve(TabBarBarCoordinator.self)!
+        addChild(coordinator)
+        coordinator.start()
     }
-    
+
     private func showLoginFlow() {
-        let coordinator = AppDelegate.container.resolve(LoginCoordinator.self)
-        coordinator?.finishFlow = {
-            self.finishFlow(coordinator!)
+        let coordinator = AppDelegate.container.resolve(LoginCoordinator.self)!
+        coordinator.finishFlow = { [weak self, weak coordinator] in
+            self?.start()
+            return self?.finishFlow(coordinator!)
         }
-        coordinator?.start()
+        addChild(coordinator)
+        coordinator.start()
     }
 }
